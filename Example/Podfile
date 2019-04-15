@@ -1,0 +1,13 @@
+use_frameworks!
+
+target 'Visual_Example' do
+  pod 'Visual', :path => '../'
+
+  pod 'VisualParser', :git => 'https://github.com/TENQUBE/VisualParser.git'
+ 
+ target 'Visual_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

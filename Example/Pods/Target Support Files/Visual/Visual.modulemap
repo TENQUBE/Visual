@@ -1,0 +1,6 @@
+framework module Visual {
+  umbrella header "Visual-umbrella.h"
+
+  export *
+  module * { export * }
+}

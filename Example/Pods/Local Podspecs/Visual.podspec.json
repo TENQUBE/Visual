@@ -1,0 +1,49 @@
+{
+  "name": "Visual",
+  "version": "0.1.7",
+  "summary": "A short description of Visual.",
+  "description": "visual money manager",
+  "homepage": "http://tenqube.com",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "kj.sa@tenqube.com": "kj.sa@tenqube.com"
+  },
+  "source": {
+    "git": "https://github.com/TENQUBE/Visual.git",
+    "tag": "0.1.7"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Visual/Classes/**/*",
+  "static_framework": true,
+  "resource_bundles": {
+    "Visual": [
+      "Visual/Assets/**/*.{storyboard,bundle,plist}"
+    ]
+  },
+  "frameworks": [
+    "UIKit",
+    "WebKit"
+  ],
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "SwiftLint": [
+
+    ],
+    "RealmSwift": [
+
+    ],
+    "SwiftyJSON": [
+
+    ],
+    "VisualParser": [
+
+    ]
+  }
+}

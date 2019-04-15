@@ -1,0 +1,37 @@
+{
+  "name": "VisualParser",
+  "version": "0.3.2",
+  "summary": "Sms Parser",
+  "description": "Sms Parser For Visual App",
+  "homepage": "https://github.com/TENQUBE/VisualParser",
+  "authors": {
+    "jh.kim": "jh.kim@tenqube.com"
+  },
+  "source": {
+    "git": "https://github.com/TENQUBE/VisualParser.git",
+    "tag": "0.3.2"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "VisualParser/Classes/**/*",
+  "resource_bundles": {
+    "VisualParser": [
+      "VisualParser/Assets/**/*"
+    ]
+  },
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "CryptoSwift": [
+
+    ],
+    "SwiftyJSON": [
+
+    ],
+    "RealmSwift": [
+
+    ]
+  }
+}

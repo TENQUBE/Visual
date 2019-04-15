@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2064" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Visual View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="VisualVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="VisualViewController" customModule="Visual" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="giA-0d-zQz"/>
+                        <viewControllerLayoutGuide type="bottom" id="jhU-YG-iZK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Tz-Np-QLu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whO-cO-ShU">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="q4S-vE-iLX">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="whO-cO-ShU" firstAttribute="top" secondItem="giA-0d-zQz" secondAttribute="bottom" id="0kp-9x-p1h"/>
+                            <constraint firstItem="q4S-vE-iLX" firstAttribute="centerY" secondItem="6Tz-Np-QLu" secondAttribute="centerY" id="A4m-rj-1CP"/>
+                            <constraint firstItem="q4S-vE-iLX" firstAttribute="centerX" secondItem="6Tz-Np-QLu" secondAttribute="centerX" id="KUc-Gd-QGp"/>
+                            <constraint firstItem="jhU-YG-iZK" firstAttribute="top" secondItem="whO-cO-ShU" secondAttribute="bottom" id="Nhy-pI-uoZ"/>
+                            <constraint firstAttribute="trailing" secondItem="whO-cO-ShU" secondAttribute="trailing" id="UlU-ex-s8C"/>
+                            <constraint firstItem="whO-cO-ShU" firstAttribute="leading" secondItem="6Tz-Np-QLu" secondAttribute="leading" id="iRR-lx-jPM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="q4S-vE-iLX" id="hj5-Ec-QOO"/>
+                        <outlet property="webView" destination="whO-cO-ShU" id="jXI-db-pmd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150.72463768115944" y="401.9021739130435"/>
+        </scene>
+    </scenes>
+</document>
