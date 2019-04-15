@@ -31,7 +31,7 @@ public class VisualServiceImpl: VisualService {
     
     public func startVisual(controller: UIViewController, uid: String, callback: VisualViewDelegate) {
         
-        let storyboard = UIStoryboard(name: "Visual", bundle: bundle)
+        let storyboard = UIStoryboard(name: "Visual", bundle: nil)
     
         guard let vvc = storyboard.instantiateViewController(withIdentifier: "VisualVC") as?
             VisualViewController else {
@@ -54,13 +54,6 @@ public class VisualServiceImpl: VisualService {
         vvc.visualViewDelegate = callback
         controller.present(vvc, animated: true)
         
-    }
-    
-    var bundle:Bundle {
-        let podBundle = Bundle(for: VisualViewController.self)
-        //api
-        let bundleURL = podBundle.url(forResource: "Visual", withExtension: "bundle")
-        return Bundle(url: bundleURL!)!
     }
   
 }

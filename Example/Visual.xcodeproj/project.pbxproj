@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02AA0E0C22DB6B57EA439C90 /* Pods_Visual_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D130CCEEC524C8DCD0CB3CFF /* Pods_Visual_Example.framework */; };
+		233A9D87AD95A296360DBE31 /* Pods_Visual_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E4D2B8D8C360755CEF54D2 /* Pods_Visual_Tests.framework */; };
+		2CF400D240A6791503B09E0D /* Pods_Visual_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9897CD80B9DC08E8413CA8 /* Pods_Visual_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		8BA089C604E7053C8BF81C3D /* Pods_Visual_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D881E51222697C10153F321 /* Pods_Visual_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00E4D2B8D8C360755CEF54D2 /* Pods_Visual_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		112AE702EB9E3803405B5B19 /* Pods-Visual_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Tests/Pods-Visual_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3897CEE1F8D1C2BF4D8AD43B /* Pods-Visual_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Example/Pods-Visual_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		443C2ED1B8301C3D2261DEC2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -42,11 +43,10 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6703869C54EFC565C3D5D8F5 /* Pods-Visual_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Tests/Pods-Visual_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		7D881E51222697C10153F321 /* Pods_Visual_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		945A0093ED2B6FD06ED41E3A /* Visual.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Visual.podspec; path = ../Visual.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		962548AE3703B62D12DA3383 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AA9897CD80B9DC08E8413CA8 /* Pods_Visual_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACCC973D9A4D271FE4B8356 /* Pods-Visual_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Example/Pods-Visual_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D130CCEEC524C8DCD0CB3CFF /* Pods_Visual_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02AA0E0C22DB6B57EA439C90 /* Pods_Visual_Example.framework in Frameworks */,
+				2CF400D240A6791503B09E0D /* Pods_Visual_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BA089C604E7053C8BF81C3D /* Pods_Visual_Tests.framework in Frameworks */,
+				233A9D87AD95A296360DBE31 /* Pods_Visual_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +153,8 @@
 		65C2BE65FB89B12640841EC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D130CCEEC524C8DCD0CB3CFF /* Pods_Visual_Example.framework */,
-				7D881E51222697C10153F321 /* Pods_Visual_Tests.framework */,
+				AA9897CD80B9DC08E8413CA8 /* Pods_Visual_Example.framework */,
+				00E4D2B8D8C360755CEF54D2 /* Pods_Visual_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -380,8 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
