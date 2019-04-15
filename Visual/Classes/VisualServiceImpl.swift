@@ -61,10 +61,14 @@ public class VisualServiceImpl: VisualService {
     
     func getBundle() -> Bundle? {
         let podBundle = Bundle(for: VisualViewController.self)
-        //api
+        print(podBundle)
+        
         guard let bundleURL = podBundle.url(forResource: "Visual", withExtension: "bundle") else {
+          
             return nil
         }
+        
+        print("bundleURL", bundleURL)
         return Bundle(url: bundleURL)
     }
   
