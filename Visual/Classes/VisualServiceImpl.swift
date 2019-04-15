@@ -31,29 +31,41 @@ public class VisualServiceImpl: VisualService {
     
     public func startVisual(controller: UIViewController, uid: String, callback: VisualViewDelegate) {
         
-        let storyboard = UIStoryboard(name: "Visual", bundle: nil)
-    
-        guard let vvc = storyboard.instantiateViewController(withIdentifier: "VisualVC") as?
-            VisualViewController else {
-            return
+        if let visualBundle = getBundle() {
+        
+            let storyboard = UIStoryboard(name: "Visual", bundle: visualBundle)
+            
+            guard let vvc = storyboard.instantiateViewController(withIdentifier: "VisualVC") as?
+                VisualViewController else {
+                    return
+            }
+            
+            vvc.paramUid = uid
+            vvc.paramApiKey = self.apiKey
+            vvc.paramLayer = self.layer
+            
+            let injection = Injection()
+            
+            vvc.visualRepository = injection.visualRepository
+            vvc.userRepository = injection.userRepository
+            vvc.syncTranRepository = injection.syncTranRepository
+            vvc.resourceRepository = injection.resourceRepository
+            vvc.analysisRepository = injection.analysisRepository
+            vvc.parser = injection.parser
+            vvc.logger = injection.logger
+            vvc.visualViewDelegate = callback
+            controller.present(vvc, animated: true)
         }
         
-        vvc.paramUid = uid
-        vvc.paramApiKey = self.apiKey
-        vvc.paramLayer = self.layer
-        
-        let injection = Injection()
-        
-        vvc.visualRepository = injection.visualRepository
-        vvc.userRepository = injection.userRepository
-        vvc.syncTranRepository = injection.syncTranRepository
-        vvc.resourceRepository = injection.resourceRepository
-        vvc.analysisRepository = injection.analysisRepository
-        vvc.parser = injection.parser
-        vvc.logger = injection.logger
-        vvc.visualViewDelegate = callback
-        controller.present(vvc, animated: true)
-        
+    }
+    
+    func getBundle() -> Bundle? {
+        let podBundle = Bundle(for: VisualViewController.self)
+        //api
+        guard let bundleURL = podBundle.url(forResource: "Visual", withExtension: "bundle") else {
+            return nil
+        }
+        return Bundle(url: bundleURL)
     }
   
 }
