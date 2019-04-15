@@ -46,7 +46,7 @@ public class CategoryDao : BaseDao, CategoryDataSource {
     }
     
     func createData() throws {
-        let categories = DataGenerator.category().datas
+        let categories = DataGenerator.category.datas
         guard let values = categories else {
             return
         }

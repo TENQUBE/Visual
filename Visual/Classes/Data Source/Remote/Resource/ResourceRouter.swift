@@ -10,7 +10,7 @@ import Alamofire
 
 public enum ResourceRouter: URLRequestConvertible {
     
-    case version()
+    case version
     case category(Int, Int)
     case analysis(Int, Int)
     case parsingRule(Int, Int)

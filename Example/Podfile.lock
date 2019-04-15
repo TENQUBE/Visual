@@ -8,13 +8,13 @@ PODS:
     - Realm (= 3.14.1)
   - SwiftLint (0.31.0)
   - SwiftyJSON (4.3.0)
-  - Visual (0.1.7):
+  - Visual (0.1.9):
     - Alamofire
     - RealmSwift
     - SwiftLint
     - SwiftyJSON
     - VisualParser
-  - VisualParser (0.3.2):
+  - VisualParser (0.3.3):
     - Alamofire
     - CryptoSwift
     - RealmSwift
@@ -41,7 +41,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   VisualParser:
-    :commit: 54eddebf65795b99e9953d922fc70164d040eac2
+    :commit: 6127c065423aac33408c3d7eea574a00dde4cd21
     :git: https://github.com/TENQUBE/VisualParser.git
 
 SPEC CHECKSUMS:
@@ -51,8 +51,8 @@ SPEC CHECKSUMS:
   RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  Visual: d938432cd1751461b7be902c51b6838c6c56a4c7
-  VisualParser: fbbd06ccd666062043611ebc426161987708a0be
+  Visual: 3c83bd3152640529e29cf5506029ce6d7e24a3ef
+  VisualParser: 7a124ede4fbedb556450f5c9973adbbe2a77ff78
 
 PODFILE CHECKSUM: f1e1ece6e544c2be6f6597cc27f2d01f9d56d23c
 

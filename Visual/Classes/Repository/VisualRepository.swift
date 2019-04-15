@@ -79,11 +79,11 @@ class VisualRepository: VisualRepo {
         self.appExecutor.diskIO.async {
          
             do {
-                if let cards = DataGenerator.card().datas {
+                if let cards = DataGenerator.card.datas {
                     try self.cardDao.save(cards as! [Card])
                 }
                 
-                if let categories = DataGenerator.category().datas {
+                if let categories = DataGenerator.category.datas {
                     try self.categoryDao.save(categories as! [Category])
                 }
 
@@ -91,7 +91,7 @@ class VisualRepository: VisualRepo {
                 try self.userCateDao.createData(lcodes: lcodes)
 
             
-                if let curruncies = DataGenerator.currency().datas {
+                if let curruncies = DataGenerator.currency.datas {
                     try self.currencyDao.save(curruncies as! [Currency])
                 }
 
@@ -785,7 +785,7 @@ class VisualRepository: VisualRepo {
                 
 //                try self.budgetDao.removeAll()
                 
-                if let cards = DataGenerator.card().datas {
+                if let cards = DataGenerator.card.datas {
                     try self.cardDao.save(cards as! [Card])
                 }
             

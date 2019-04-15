@@ -10,13 +10,13 @@ import Foundation
 
 public enum DataGenerator {
     
-    case category()
-    case currency()
-    case notification()
-    case card()
-    case budget()
-    case content()
-    case condition()
+    case category
+    case currency
+    case notification
+    case card
+    case budget
+    case content
+    case condition
     
 
     var filePath: String {
@@ -46,7 +46,7 @@ public enum DataGenerator {
     var datas: [Any]? {
         
         switch self {
-        case .category():
+        case .category:
             let contents = try? String(contentsOfFile: filePath, encoding: .utf8)
             
             
@@ -58,7 +58,7 @@ public enum DataGenerator {
                                              small: $0[4]))
             }
             
-        case .currency():
+        case .currency:
             var i: Int = 1
             let contents = try? String(contentsOfFile: filePath, encoding: .utf8)
             
@@ -75,7 +75,7 @@ public enum DataGenerator {
                 return currency
             }
             
-        case .notification():
+        case .notification:
             let contents = try? String(contentsOfFile: filePath, encoding: .utf8)
 //            id    name    title    content    ticker    alarm_type    day_of_week    hour    day    version    enable    created_at
             return contents?.parseTSV().map {
@@ -91,7 +91,7 @@ public enum DataGenerator {
                                     enabled: Int($0[10]) == 1))
             }
             
-        case .content():
+        case .content:
             //id    priority    category_priority    num_of_occurrence    l_code    raw_keys    link_to    label    l_content    l_keys    m_content    m_keys    image
 
             let contents = try? String(contentsOfFile: filePath, encoding: .utf8)
@@ -115,7 +115,7 @@ public enum DataGenerator {
                 ))
             }
             
-        case .condition():
+        case .condition:
             //id    cid    standard    func_type    func_keys
             let contents = try? String(contentsOfFile: filePath, encoding: .utf8)
             return contents?.parseTSV().map {
@@ -129,7 +129,7 @@ public enum DataGenerator {
                 ))
             }
             
-        case .card():
+        case .card:
             
             let card = Card((id:1,
                              name: "현금",
@@ -147,7 +147,7 @@ public enum DataGenerator {
         
             return [card]
             
-        case .budget():
+        case .budget:
          
             let calendar = Calendar.current
             

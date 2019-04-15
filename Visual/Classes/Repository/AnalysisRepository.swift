@@ -40,11 +40,11 @@ class AnalysisRepository: AnalysisRepo {
         self.appExecutor.diskIO.async {
             
             do {
-                if let contents = DataGenerator.content().datas {
+                if let contents = DataGenerator.content.datas {
                     try self.contentDao.save(contents as! [Content])
                 }
                 
-                if let conditions = DataGenerator.condition().datas {
+                if let conditions = DataGenerator.condition.datas {
                     try self.conditionDao.save(conditions as! [Condition])
                 }
                 

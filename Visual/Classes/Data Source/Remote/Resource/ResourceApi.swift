@@ -13,7 +13,7 @@ class ResourceApi: ResourceApiService {
     }
     
     func getVersions(callback: @escaping (VersionResponse?, Error?) -> ()) {
-        self.apiManager.call(type: ResourceRouter.version()) { (response: VersionResponse?, err: Error?) in
+        self.apiManager.call(type: ResourceRouter.version) { (response: VersionResponse?, err: Error?) in
             callback(response, err)
         }
     }

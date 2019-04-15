@@ -23,11 +23,10 @@ class RegRuleManager {
         }
 
         for parsingRuleResult in parsingRuleResults {
-            guard let regRule = try? repository.regRule.findNotDeleted(by: parsingRuleResult.regRuleId),
-                let rule = regRule
-                else { continue }
+            guard let regRule = try repository.regRule.findNotDeleted(by: parsingRuleResult.regRuleId)
+            else { continue }
 
-            matchedSenderRegRule[rule.repSender] = rule
+            matchedSenderRegRule[regRule.repSender] = regRule
         }
     }
 
