@@ -16,4 +16,5 @@ protocol ConditionDataSource {
     
     func edit(_ elements: [Condition]) throws
     
+    func removeAll() throws
 }

@@ -11,6 +11,13 @@ import Visual
 
 class ViewController: UIViewController, VisualViewDelegate {
     
+    var service: VisualService?
+    @IBOutlet weak var start: UIButton!
+    
+    @IBAction func clickBtn01(_ sender: Any) {
+        VisualManager.shared().startVisual(controller: self, uid: "1234")
+    }
+    
     func onFinish() {
         print("onFinish()")
     }
@@ -22,13 +29,8 @@ class ViewController: UIViewController, VisualViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("viewDidLoad")
-        do {
-            let service = try VisualServiceImpl(apiKey: "LEZQmdU1Zx8hxH1PjfT7hWTzdGOQYre58AVHNgA0", layer: .dev)
-            service.startVisual(controller: self, uid: "1234", callback: self)
-        } catch {
-            print("error")
-        }
+     
+     
     }
 
     override func didReceiveMemoryWarning() {

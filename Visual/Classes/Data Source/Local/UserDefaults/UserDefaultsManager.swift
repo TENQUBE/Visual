@@ -17,16 +17,18 @@ class UserDefaultsManager {
 
     func clearAll(){
         pref.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        pref.synchronize()
+        synchronize()
     }
     
     
     func save<T>(key: String, value: T) {
         pref.set(value, forKey: key)
+        synchronize()
     }
     
     func remove(key: String) {
         pref.removeObject(forKey: key)
+        synchronize()
     }
  
     func synchronize(){

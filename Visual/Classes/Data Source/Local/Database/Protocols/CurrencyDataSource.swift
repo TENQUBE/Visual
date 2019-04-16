@@ -15,5 +15,7 @@ protocol CurrencyDataSource {
     func find(by fromTo: [(String, String)]) throws ->  [Currency]
     
     func save(_ elements: [Currency]) throws
+    
+    func removeAll() throws
 
 }

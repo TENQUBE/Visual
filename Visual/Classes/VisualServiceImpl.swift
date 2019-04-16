@@ -13,7 +13,6 @@ public protocol VisualViewDelegate {
     func onFinish()
 }
 
-
 public enum LayerType:String {
     case dev = "dev"
     case prod = "prod"
@@ -23,10 +22,12 @@ public class VisualServiceImpl: VisualService {
     
     let apiKey: String
     let layer: String
+    let injector: Injection
 
     public init(apiKey: String, layer: LayerType) throws {
         self.apiKey = apiKey
         self.layer = layer.rawValue
+        self.injector = Injection()
     }
     
     public func startVisual(controller: UIViewController, uid: String, callback: VisualViewDelegate) {
@@ -43,18 +44,19 @@ public class VisualServiceImpl: VisualService {
             vvc.paramUid = uid
             vvc.paramApiKey = self.apiKey
             vvc.paramLayer = self.layer
-            
-            let injection = Injection()
-            
-            vvc.visualRepository = injection.visualRepository
-            vvc.userRepository = injection.userRepository
-            vvc.syncTranRepository = injection.syncTranRepository
-            vvc.resourceRepository = injection.resourceRepository
-            vvc.analysisRepository = injection.analysisRepository
-            vvc.parser = injection.parser
-            vvc.logger = injection.logger
+
+            vvc.visualRepository = injector.visualRepository
+            vvc.userRepository = injector.userRepository
+            vvc.syncTranRepository = injector.syncTranRepository
+            vvc.resourceRepository = injector.resourceRepository
+            vvc.analysisRepository = injector.analysisRepository
+            vvc.parser = injector.parser
+            vvc.logger = injector.logger
+            vvc.appExecutor = injector.appExecutor
             vvc.visualViewDelegate = callback
             controller.present(vvc, animated: true)
+        } else {
+            callback.onFinish()
         }
         
     }
@@ -67,8 +69,6 @@ public class VisualServiceImpl: VisualService {
           
             return nil
         }
-        
-        print("bundleURL", bundleURL)
         return Bundle(url: bundleURL)
     }
   

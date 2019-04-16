@@ -10,7 +10,7 @@ import Foundation
 
 protocol AnalysisRepo {
     
-    func generateDatas(callback: @escaping (_ success: Bool)->())
+    func generateDatas()
     
     func loadAnalysisList(req: [JoinedTransaction], callback: @escaping ([AnalysisResult]) -> ())
     

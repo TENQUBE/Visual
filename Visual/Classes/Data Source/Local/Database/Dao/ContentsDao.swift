@@ -67,5 +67,11 @@ public class ContentDao: BaseDao, ContentDataSource {
             try self.realmManager.editObjects(objs: model)
         }
     }
+    
+    public func removeAll() throws {
+        if let objects = try realmManager.getObjects(type: ContentModel.self) {
+            try realmManager.deleteObject(objs: objects)
+        }
+    }
 
 }

@@ -23,4 +23,6 @@ protocol CategoryDataSource {
     func edit(_ elements: [Category]) throws
     
     func remove(_ elements: [Category]) throws
+    
+    func removeAll() throws
 }

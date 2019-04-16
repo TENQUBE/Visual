@@ -109,7 +109,11 @@ public class CategoryDao : BaseDao, CategoryDataSource {
         }
     }
     
-    
+    public func removeAll() throws {
+        if let objects = try realmManager.getObjects(type: CategoryModel.self) {
+            try realmManager.deleteObject(objs: objects)
+        }
+    }
     
    
 }

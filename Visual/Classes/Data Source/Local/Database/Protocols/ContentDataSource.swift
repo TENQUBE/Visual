@@ -14,6 +14,8 @@ protocol ContentDataSource {
     
     func save(_ elements: [Content]) throws
     
-    func edit(_ elements: [Content]) throws 
+    func edit(_ elements: [Content]) throws
+    
+    func removeAll() throws
     
 }

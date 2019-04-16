@@ -30,6 +30,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     var analysisRepository: AnalysisRepo?
     var parser: ParserProtocol?
     var logger: Log?
+    var appExecutor: AppExecutors?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +44,15 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
             let _ = self.resourceRepository,
             let _ = self.analysisRepository,
             let _ = self.parser,
-            let _ = self.logger
+            let _ = self.logger,
+            let _ = self.appExecutor
         
             else {
                 self.loadFailPage()
                 return
         }
         
-        self.spinner.startAnimating()
+        setSpinnserAnim(isActive: true)
         
         logger?.sendView(viewName: LogEvent.startVisual.rawValue)
 
@@ -88,11 +90,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
                 self.loadFailPage()
                 break
             case .success:
-                self.analysisRepository!.generateDatas() {_ in
-                    self.visualRepository!.generateDatas() {_ in
-                        self.start(url: self.getUrl(path: self.paramPath))
-                    }
-                }
+                 self.start(url: self.getUrl(path: self.paramPath))
                 break
             }
         }
@@ -117,7 +115,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
             let baseUrl = URL(fileURLWithPath: filePath)
             self.webView.loadHTMLString(contents as String, baseURL: baseUrl)
         } catch {
-            print ("File HTML error")
+            finish()
         }
     }
     
@@ -195,7 +193,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func onPageLoaded() {
-         self.spinner.stopAnimating()
+        setSpinnserAnim(isActive: false)
     }
     
     func setRefreshEnabled(enabled: Bool) {
@@ -277,24 +275,37 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
 extension VisualViewController: UIWebViewDelegate {
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         
-        print("shouldStartLoadWith")
-//        self.spinner.startAnimating()
-        self.spinner.stopAnimating()
+        setSpinnserAnim(isActive: false)
         return true
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
 
         print("webViewDidFinishLoad")
-        self.spinner.stopAnimating()
+        self.setSpinnserAnim(isActive: false)
+        
+    
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
        
         print("error",error)
 
-        self.spinner.stopAnimating()
-         self.loadFailPage()
+        self.appExecutor?.mainThread.async {
+            self.setSpinnserAnim(isActive: false)
+            self.loadFailPage()
+        }
+    }
+    
+    func setSpinnserAnim(isActive: Bool) {
+        self.appExecutor?.mainThread.async {
+         
+            if isActive {
+                self.spinner.startAnimating()
+            } else {
+                self.spinner.stopAnimating()
+            }
+        }
     }
 }
 

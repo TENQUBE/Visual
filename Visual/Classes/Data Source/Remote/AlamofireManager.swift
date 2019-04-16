@@ -36,7 +36,8 @@ class AlamofireManager {
                                                     callback(nil, nil)
                                                 }
                                             } catch {
-                                                print("json error", response.data)
+                                                
+                                                print("json error", response.data ?? "nil")
                                                 callback(nil, nil)
                                             }
                                            

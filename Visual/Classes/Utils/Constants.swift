@@ -49,6 +49,13 @@ struct Constants {
         static let AnalysisVersion = "AnalysisVersion"
         static let AdVersion = "AdVersion"
         
+        static let VisualData = "VisualData"
+        static let AnalysisData = "AnalysisData"
+        
+        
+        
+        
+        
     }
     
     struct ExceptCode {

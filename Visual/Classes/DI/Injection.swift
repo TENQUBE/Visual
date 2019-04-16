@@ -18,9 +18,10 @@ class Injection {
     var analysisRepository: AnalysisRepo?
     var parser: ParserProtocol?
     var logger: Log?
+    var appExecutor: AppExecutors?
     
     init() {
-        let appExecutor = self.provideAppExecutor()
+        self.appExecutor = self.provideAppExecutor()
         let dbManager = self.provideDbManager()
         let cardDao = self.provideCardDao(manager: dbManager)
         let adDao = self.provideAdDao(manager: dbManager)
@@ -45,10 +46,10 @@ class Injection {
         let parserApi = self.provideParserAPI(resourceApi: resourceApi,
                                               searchManager: searchManager,
                                               currencyDao: currencyDao,
-                                              appExecutor: appExecutor)
+                                              appExecutor: appExecutor!)
         
         self.parser = self.provideParser(udfManager: udfManager,
-                                         appExecutor: appExecutor,
+                                         appExecutor: appExecutor!,
                                          parserApi: parserApi)
         
         // repository
@@ -61,19 +62,19 @@ class Injection {
                                                              currencyDao: currencyDao,
                                                              userCateDao: userCateDao,
                                                              tranDao: tranDao,
-                                                             appExecutor: appExecutor)
+                                                             appExecutor: appExecutor!)
         
         self.userRepository = self.provideUserRepository(api: visualApi,
                                                          udfManager: udfManager,
-                                                         appExecutor: appExecutor)
+                                                         appExecutor: appExecutor!)
         
-        self.syncTranRepository = self.provideSyncTranRepository(appExecutor: appExecutor,
+        self.syncTranRepository = self.provideSyncTranRepository(appExecutor: appExecutor!,
                                                                  categoryDao: cateDao,
                                                                  userCateDao: userCateDao,
                                                                  cardDao: cardDao,
                                                                  tranDao: tranDao,
                                                                  visualApi: visualApi)
-        self.resourceRepository = self.provideResourceRepository(appExecutor: appExecutor,
+        self.resourceRepository = self.provideResourceRepository(appExecutor: appExecutor!,
                                                                  categoryDao: cateDao,
                                                                  userCateDao: userCateDao,
                                                                  currencyDao: currencyDao,
@@ -82,10 +83,11 @@ class Injection {
                                                                  visualApi: visualApi,
                                                                  udf: udfManager, parser: parser!)
         
-        self.analysisRepository = self.provideAnalysisRepository(appExecutor: appExecutor,
+        self.analysisRepository = self.provideAnalysisRepository(appExecutor: appExecutor!,
                                                                  contentDao: contentDao,
                                                                  conditionDao: conditionDao,
-                                                                 analysisDao: analysisDao)
+                                                                 analysisDao: analysisDao,
+                                                                 udfManager: udfManager)
         
         // logger
         self.logger = self.provideLogger()
@@ -264,12 +266,14 @@ class Injection {
         appExecutor: AppExecutors,
         contentDao: ContentDataSource,
         conditionDao: ConditionDataSource,
-        analysisDao: AnalysisDataSource) -> AnalysisRepo {
+        analysisDao: AnalysisDataSource,
+        udfManager: UserDefaultsManager) -> AnalysisRepo {
         
         return AnalysisRepository(appExecutor: appExecutor,
                                   contentDao: contentDao,
                                   conditionDao: conditionDao,
-                                  analysisDao: analysisDao)
+                                  analysisDao: analysisDao,
+                                    udfManager: udfManager)
     }
     
    

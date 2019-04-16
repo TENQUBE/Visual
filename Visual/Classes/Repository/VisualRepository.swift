@@ -49,6 +49,8 @@ class VisualRepository: VisualRepo {
 //        self.notificationDao = notificationDao
 
         self.appExecutor = appExecutor
+        
+        generateDatas()
     }
     
     func saveApiKey(apiKey: String) {
@@ -74,44 +76,48 @@ class VisualRepository: VisualRepo {
         self.udfManager.save(key: Constants.UDFKey.TranPopUp, value: shouldShow)
     }
     
-    func generateDatas(callback: @escaping (Bool) -> ()) {
+    func generateDatas() {
         
         self.appExecutor.diskIO.async {
          
             do {
-                if let cards = DataGenerator.card.datas {
-                    try self.cardDao.save(cards as! [Card])
+                if !self.udfManager.pref.bool(forKey: Constants.UDFKey.VisualData) {
+                    if let cards = DataGenerator.card.datas {
+                        try self.cardDao.removeAll()
+                        try self.cardDao.save(cards as! [Card])
+                    }
+                    
+                    if let categories = DataGenerator.category.datas {
+                        try self.categoryDao.removeAll()
+                        try self.userCateDao.removeAll()
+                        try self.categoryDao.save(categories as! [Category])
+                    }
+                    
+                    let lcodes = try self.categoryDao.findDistinctLocdes()
+                    try self.userCateDao.createData(lcodes: lcodes)
+                    
+                    
+                    if let curruncies = DataGenerator.currency.datas {
+                        try self.currencyDao.removeAll()
+                        try self.currencyDao.save(curruncies as! [Currency])
+                    }
+                    
+                    self.udfManager.save(key: Constants.UDFKey.VisualData, value: true)
+                    
+                    //                if let notifications = DataGenerator.notification().datas {
+                    //                    try self.notificationDao.save(notifications as! [ReportNotification])
+                    //                }
+                    //
+                    //                if let budgets = DataGenerator.budget().datas {
+                    //                    try self.budgetDao.save(budgets as! [Budget])
+                    //                }
                 }
                 
-                if let categories = DataGenerator.category.datas {
-                    try self.categoryDao.save(categories as! [Category])
-                }
-
-                let lcodes = try self.categoryDao.findDistinctLocdes()
-                try self.userCateDao.createData(lcodes: lcodes)
-
-            
-                if let curruncies = DataGenerator.currency.datas {
-                    try self.currencyDao.save(curruncies as! [Currency])
-                }
-
-//                if let notifications = DataGenerator.notification().datas {
-//                    try self.notificationDao.save(notifications as! [ReportNotification])
-//                }
-//
-//                if let budgets = DataGenerator.budget().datas {
-//                    try self.budgetDao.save(budgets as! [Budget])
-//                }
                 
-                self.appExecutor.mainThread.async {
-                    callback(true)
-                }
-                
+           
                
             } catch {
-                self.appExecutor.mainThread.async {
-                    callback(false)
-                }
+              
             }
         }
     }

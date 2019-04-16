@@ -47,4 +47,10 @@ public class ConditionDao: BaseDao, ConditionDataSource {
         }
     }
     
+    public func removeAll() throws {
+        if let objects = try realmManager.getObjects(type: ConditionModel.self) {
+            try realmManager.deleteObject(objs: objects)
+        }
+    }
+    
 }

@@ -18,44 +18,50 @@ class AnalysisRepository: AnalysisRepo {
     
     let analysisDao: AnalysisDataSource
     
+    let udfManager: UserDefaultsManager
+    
     var analysisResults: [AnalysisResult]?
     
     init(appExecutor: AppExecutors,
          contentDao: ContentDataSource,
          conditionDao: ConditionDataSource,
-         analysisDao: AnalysisDataSource) {
+         analysisDao: AnalysisDataSource,
+         udfManager: UserDefaultsManager
+         ) {
         
         self.appExecutor = appExecutor
         self.contentDao = contentDao
         self.conditionDao = conditionDao
         self.analysisDao = analysisDao
+        self.udfManager = udfManager
 //        self.resourceApi = resourceApi
+        
+        generateDatas()
     }
     
     func clearCache() {
          self.analysisResults = nil
     }
     
-    func generateDatas(callback: @escaping (_ success: Bool)->()) {
+    func generateDatas() {
         self.appExecutor.diskIO.async {
             
             do {
-                if let contents = DataGenerator.content.datas {
-                    try self.contentDao.save(contents as! [Content])
+                if !self.udfManager.pref.bool(forKey: Constants.UDFKey.AnalysisData) {
+                    if let contents = DataGenerator.content.datas {
+                        try self.contentDao.removeAll()
+                        try self.contentDao.save(contents as! [Content])
+                    }
+                    
+                    if let conditions = DataGenerator.condition.datas {
+                        try self.conditionDao.removeAll()
+                        try self.conditionDao.save(conditions as! [Condition])
+                    }
+                    
+                    self.udfManager.save(key: Constants.UDFKey.AnalysisData, value: true)
                 }
-                
-                if let conditions = DataGenerator.condition.datas {
-                    try self.conditionDao.save(conditions as! [Condition])
-                }
-                
-                self.appExecutor.mainThread.async {
-                    callback(true)
-                }
-                
             } catch {
-                self.appExecutor.mainThread.async {
-                    callback(false)
-                }
+               
             }
         }
     }

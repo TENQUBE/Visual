@@ -52,5 +52,11 @@ public class CurrencyDao: BaseDao, CurrencyDataSource {
         }
         
     }
+    
+    public func removeAll() throws {
+        if let objects = try realmManager.getObjects(type: CurrencyModel.self) {
+            try realmManager.deleteObject(objs: objects)
+        }
+    }
    
 }
