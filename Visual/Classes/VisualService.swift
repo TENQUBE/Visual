@@ -13,4 +13,6 @@ public protocol VisualService {
 
     func startVisual(controller: UIViewController, uid: String, callback: VisualViewDelegate)
     
+    func signOut(callback: @escaping (Bool) -> ())
+    
 }

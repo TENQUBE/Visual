@@ -11,7 +11,6 @@ import Visual
 
 class ViewController: UIViewController, VisualViewDelegate {
     
-    var service: VisualService?
     @IBOutlet weak var start: UIButton!
     
     @IBAction func clickBtn01(_ sender: Any) {
@@ -24,6 +23,7 @@ class ViewController: UIViewController, VisualViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        VisualManager.shared().signOut()
         // Do any additional setup after loading the view, typically from a nib.
         
     }

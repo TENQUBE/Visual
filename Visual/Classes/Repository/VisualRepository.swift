@@ -53,6 +53,14 @@ class VisualRepository: VisualRepo {
         generateDatas()
     }
     
+    func signOut(callback: @escaping (Bool) -> ()) {
+        initialize { (suc) in
+            self.udfManager.save(key: Constants.UDFKey.UID, value: "")
+            callback(suc)
+        }
+    }
+    
+    
     func saveApiKey(apiKey: String) {
         self.udfManager.save(key: Constants.UDFKey.ApiKey, value: apiKey)
     }

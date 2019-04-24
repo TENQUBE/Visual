@@ -19,7 +19,7 @@ public enum LayerType:String {
 }
 
 public class VisualServiceImpl: VisualService {
-    
+
     let apiKey: String
     let layer: String
     let injector: Injection
@@ -71,5 +71,15 @@ public class VisualServiceImpl: VisualService {
         }
         return Bundle(url: bundleURL)
     }
+    
+    public func signOut(callback: @escaping (Bool) -> ()) {
+
+        injector.visualRepository?.signOut(callback: { (suc) in
+            
+            callback(suc)
+        })
+
+    }
+  
   
 }

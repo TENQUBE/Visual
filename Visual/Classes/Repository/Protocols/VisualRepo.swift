@@ -10,6 +10,8 @@ import Foundation
 
 protocol VisualRepo {
     
+    func signOut(callback: @escaping (Bool) -> ())
+    
     func saveApiKey(apiKey: String)
     
     func saveLayer(layer: String)

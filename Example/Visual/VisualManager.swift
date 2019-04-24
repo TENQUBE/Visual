@@ -44,6 +44,19 @@ class VisualManager: VisualViewDelegate {
             return
         }
         visualService.startVisual(controller: controller, uid: uid, callback: self)
+    
+    }
+    
+    public func signOut() {
+        guard let visualService = self.visualService else {
+            self.visualService = VisualManager.createVisual()
+            return
+        }
+        visualService.signOut(callback: { (suc) in
+            
+            print("signOut", suc)
+        })
+        
     }
     
     // MARK: - Accessors
