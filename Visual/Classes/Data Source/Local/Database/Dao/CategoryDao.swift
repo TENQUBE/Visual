@@ -12,20 +12,17 @@ public class CategoryDao : BaseDao, CategoryDataSource {
     func find(by code: Int) throws -> Category? {
         let whereCond = QueryBuilder().code(code: code).build()
         
-        guard let obj = try self.realmManager.getObjects(type: CategoryModel.self)?.filter(whereCond).first else {
+        guard let obj = try self.realmManager.getObjects(type: CategoryModel.self).filter(whereCond).first else {
             return nil
         }
         
         return (obj as! CategoryModel).toCategory()
     }
     
-   
     func find(by codes: [Int]) throws -> [Category] {
         let whereCond = QueryBuilder().codes(codes: codes).build()
      
-        guard let results = try self.realmManager.getObjects(type: CategoryModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let results = try self.realmManager.getObjects(type: CategoryModel.self).filter(whereCond)
         
         return results.map {
             ($0 as! CategoryModel).toCategory()
@@ -34,9 +31,7 @@ public class CategoryDao : BaseDao, CategoryDataSource {
 
     func findDistinctLocdes() throws  -> [Int] {
         
-        guard let values = try self.realmManager.getObjects(type: CategoryModel.self) else {
-            return []
-        }
+        let values = try self.realmManager.getObjects(type: CategoryModel.self)
         
         let results = values.map({
             Int(String(($0 as! CategoryModel).code)[0..<2] + "1010")
@@ -60,9 +55,7 @@ public class CategoryDao : BaseDao, CategoryDataSource {
 
     func findAll() throws -> [Category]  {
         
-        guard let values = try self.realmManager.getObjects(type: CategoryModel.self) else {
-            return []
-        }
+        let values = try self.realmManager.getObjects(type: CategoryModel.self)
    
         return values.map({
             ($0 as! CategoryModel).toCategory()
@@ -110,9 +103,9 @@ public class CategoryDao : BaseDao, CategoryDataSource {
     }
     
     public func removeAll() throws {
-        if let objects = try realmManager.getObjects(type: CategoryModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: CategoryModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
     
    

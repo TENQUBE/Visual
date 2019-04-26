@@ -99,7 +99,7 @@ class RealmManager {
     }
     
     //Returs an array as Results<object>?
-    func getObjects(type: Object.Type) throws -> Results<Object>? {
+    func getObjects(type: Object.Type) throws -> Results<Object>{
         let realm = try Realm()
         
         return realm.objects(type)

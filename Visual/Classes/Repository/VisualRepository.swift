@@ -278,7 +278,7 @@ class VisualRepository: VisualRepo {
             do {
                 // 내역
                 let transactions = try self.tranDao.find(by: req)
-           
+                print("transactions", transactions)
                 let res = try self.getTransactions(transactions: transactions)
                 print(res)
                 self.appExecutor.mainThread.async {

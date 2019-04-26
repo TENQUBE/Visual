@@ -12,11 +12,7 @@ public class ContentDao: BaseDao, ContentDataSource {
     
     func findAll() throws -> [Content] {
         
-        guard let elements = try realmManager.getObjects(type: ContentModel.self) else {
-            print("findAll nil")
-            
-            return []
-        }
+        let elements = try realmManager.getObjects(type: ContentModel.self)
         
         return elements.map({
             ($0 as! ContentModel).toContent()
@@ -69,9 +65,9 @@ public class ContentDao: BaseDao, ContentDataSource {
     }
     
     public func removeAll() throws {
-        if let objects = try realmManager.getObjects(type: ContentModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: ContentModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
 
 }

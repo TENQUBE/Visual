@@ -67,6 +67,7 @@ struct Constants {
 enum VisualError: Error {
     case parameter
     case notNull
+    case db
 }
 
 enum SearchCompany:String {

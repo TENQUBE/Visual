@@ -11,9 +11,7 @@ import RealmSwift
 public class TransactionDao: BaseDao, TransactionDataSource {
   
     public func findAll() throws -> [Transaction] {
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self)
         
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
@@ -29,9 +27,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
         
         print(whereCond)
         
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self).filter(whereCond)
         
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
@@ -45,9 +41,8 @@ public class TransactionDao: BaseDao, TransactionDataSource {
             .build()
         
         print(whereCond)
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self).filter(whereCond)
+        
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
         }
@@ -57,7 +52,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
     func find(by id: Int) throws -> Transaction? {
         let wherCond = QueryBuilder().id(id: id).build()
         
-        guard let element = try realmManager.getObjects(type: TransactionModel.self)?.filter(wherCond).first else {
+        guard let element = try realmManager.getObjects(type: TransactionModel.self).filter(wherCond).first else {
             return nil
         }
         
@@ -69,9 +64,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
       
         let wherCond = QueryBuilder().ids(ids: ids).build()
          
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self)?.filter(wherCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self).filter(wherCond)
         
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
@@ -82,9 +75,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
         
         let wherCond = QueryBuilder().identifiers(identifiers: identifiers).build()
         
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self)?.filter(wherCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self).filter(wherCond)
         
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
@@ -98,9 +89,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
             .dwType(dwType: dwType)
             .build()
         
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self)?.filter(wherCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self).filter(wherCond)
         
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
@@ -114,9 +103,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
             .isPopUpCompanyName(flag: true)
             .build()
         
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self)?.filter(wherCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self).filter(wherCond)
         
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
@@ -130,9 +117,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
             .isUpdateAll(flag: true)
             .build()
         
-        guard let elements = try realmManager.getObjects(type: TransactionModel.self)?.filter(wherCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: TransactionModel.self).filter(wherCond)
         
         return elements.map {
             ($0 as! TransactionModel).toTransaction()
@@ -166,18 +151,15 @@ public class TransactionDao: BaseDao, TransactionDataSource {
     func remove(by ids: [Int]) throws {
         let whereCond = QueryBuilder().ids(ids: ids).build()
         
-        print (whereCond)
-        guard let objects = try self.realmManager.getObjects(type: TransactionModel.self)?.filter(whereCond) else {
-            return
-        }
+        let objects = try self.realmManager.getObjects(type: TransactionModel.self).filter(whereCond)
         
         try self.realmManager.deleteObject(objs: objects)
     }
     
     public func removeAll() throws {
         
-        if let objects = try realmManager.getObjects(type: TransactionModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: TransactionModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
 }

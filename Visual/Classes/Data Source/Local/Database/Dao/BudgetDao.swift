@@ -10,10 +10,8 @@ import RealmSwift
 public class BudgetDao: BaseDao, BudgetDataSource {
 
     public func findAll() throws -> [Budget] {
-        guard let elements = try realmManager.getObjects(type: BudgetModel.self) else {
-            return []
-        }
-        
+        let elements = try realmManager.getObjects(type: BudgetModel.self)
+    
         return elements.map({
             ($0 as! BudgetModel).toBudget()
         })
@@ -34,8 +32,8 @@ public class BudgetDao: BaseDao, BudgetDataSource {
     }
     
     public func removeAll() throws {
-        if let objects = try realmManager.getObjects(type: BudgetModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: BudgetModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
 }

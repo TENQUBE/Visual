@@ -159,9 +159,9 @@ class RepositoryBridge: BaseBridge, RepositoryProtocol {
                 
                 self.analysisRepository?.clearCache()
                 self.syncTranRepository?.syncTransaction()
+                
                 super.callback(callback: request!.callbackJS, obj: Success(success: true))
 
-                
             })
 
         } catch {

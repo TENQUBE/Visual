@@ -15,7 +15,7 @@ public class CurrencyDao: BaseDao, CurrencyDataSource {
 //        let whereCond = NSPredicate(format: "from = %@ AND to = %@", [from, to])
         let whereCond = QueryBuilder().from(from: from).and().to(to: to).build()
         
-        guard let obj = try realmManager.getObjects(type: CurrencyModel.self)?.filter(whereCond).first,
+        guard let obj = try realmManager.getObjects(type: CurrencyModel.self).filter(whereCond).first,
             let currencyModel = obj as? CurrencyModel else {
                 return nil
         }
@@ -28,9 +28,7 @@ public class CurrencyDao: BaseDao, CurrencyDataSource {
         
         let whereCond = QueryBuilder().fromTo(fromTo: fromTo).build()
    
-        guard let elements = try realmManager.getObjects(type: CurrencyModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: CurrencyModel.self).filter(whereCond)
         
         return elements.map({
             ($0 as! CurrencyModel).toCurrency()
@@ -54,9 +52,9 @@ public class CurrencyDao: BaseDao, CurrencyDataSource {
     }
     
     public func removeAll() throws {
-        if let objects = try realmManager.getObjects(type: CurrencyModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: CurrencyModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
    
 }

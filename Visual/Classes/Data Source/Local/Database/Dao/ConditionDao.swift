@@ -12,9 +12,7 @@ public class ConditionDao: BaseDao, ConditionDataSource {
 
     func findAll() throws -> [Condition] {
         
-        guard let elements = try realmManager.getObjects(type: ConditionModel.self) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: ConditionModel.self)
         
         return elements.map({
             ($0 as! ConditionModel).toCondition()
@@ -48,9 +46,9 @@ public class ConditionDao: BaseDao, ConditionDataSource {
     }
     
     public func removeAll() throws {
-        if let objects = try realmManager.getObjects(type: ConditionModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: ConditionModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
     
 }

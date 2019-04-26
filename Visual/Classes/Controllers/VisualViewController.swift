@@ -185,7 +185,10 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func executeJs(js: String) {
-        self.webView.stringByEvaluatingJavaScript(from: js)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // Change `2.0` to the desired number of seconds.
+            self.webView.stringByEvaluatingJavaScript(from: js)
+        }
+        
     }
     
     func show(alert: UIAlertController, animated: Bool, completion: @escaping () -> Void) {

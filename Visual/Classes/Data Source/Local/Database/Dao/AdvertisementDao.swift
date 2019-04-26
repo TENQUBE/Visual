@@ -10,9 +10,7 @@ import RealmSwift
 public class AdvertisementDao: BaseDao, AdvertisementDataSource {
 
     public func findAll() throws -> [Advertisement] {
-        guard let elements = try realmManager.getObjects(type: AdvertisementModel.self) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: AdvertisementModel.self)
         
         return elements.map({
             ($0 as! AdvertisementModel).toAdvertisment()

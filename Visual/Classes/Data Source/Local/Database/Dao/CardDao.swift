@@ -13,7 +13,7 @@ public class CardDao: BaseDao, CardDataSource {
     func find(by id: Int) throws -> Card? {
         let whereCond = QueryBuilder().id(id: id).build()
         
-        guard let result = try realmManager.getObjects(type: CardModel.self)?.filter(whereCond).first else {
+        guard let result = try realmManager.getObjects(type: CardModel.self).filter(whereCond).first else {
             return nil
         }
         
@@ -30,7 +30,7 @@ public class CardDao: BaseDao, CardDataSource {
             .cardSubType(subType: subType)
             .build()
         
-        let result = try realmManager.getObjects(type: CardModel.self)?.filter(whereCond).first
+        let result = try realmManager.getObjects(type: CardModel.self).filter(whereCond).first
         
         if result == nil {
             
@@ -64,9 +64,7 @@ public class CardDao: BaseDao, CardDataSource {
         
         let whereCond = QueryBuilder().isExcept(isExcept: isExcept).build()
         
-        guard let results = try realmManager.getObjects(type: CardModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let results = try realmManager.getObjects(type: CardModel.self).filter(whereCond)
         
         return results.map {
             ($0 as! CardModel).toCard()
@@ -76,9 +74,7 @@ public class CardDao: BaseDao, CardDataSource {
     func find(by cardIds: [Int]) throws -> [Card] {
         let whereCond = QueryBuilder().ids(ids: cardIds).build()
         
-        guard let results = try realmManager.getObjects(type: CardModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let results = try realmManager.getObjects(type: CardModel.self).filter(whereCond)
         
         return results.map {
             ($0 as! CardModel).toCard()
@@ -87,9 +83,7 @@ public class CardDao: BaseDao, CardDataSource {
    
     public func findAll() throws -> [Card] {
    
-        guard let results = try realmManager.getObjects(type: CardModel.self) else {
-            return []
-        }
+        let results = try realmManager.getObjects(type: CardModel.self)
     
         return results.map {
                 ($0 as! CardModel).toCard()
@@ -123,8 +117,8 @@ public class CardDao: BaseDao, CardDataSource {
     
     public func removeAll() throws {
         
-        if let objects = try realmManager.getObjects(type: CardModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: CardModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
 }

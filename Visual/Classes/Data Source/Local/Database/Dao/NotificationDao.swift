@@ -10,9 +10,7 @@ import RealmSwift
 public class NotificationDao: BaseDao, NotificationDataSource {
   
     public func findAll() throws -> [ReportNotification] {
-        guard let elements = try realmManager.getObjects(type: ReportNotificationModel.self) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: ReportNotificationModel.self)
         
         return elements.map({
             ($0 as! ReportNotificationModel).toNotification()
@@ -21,9 +19,7 @@ public class NotificationDao: BaseDao, NotificationDataSource {
     
     func find(by name: String) throws -> [ReportNotification] {
         let whereCond = QueryBuilder().nameC(name: name).build()
-        guard let elements = try realmManager.getObjects(type: ReportNotificationModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: ReportNotificationModel.self).filter(whereCond)
         
         return elements.map({
             ($0 as! ReportNotificationModel).toNotification()

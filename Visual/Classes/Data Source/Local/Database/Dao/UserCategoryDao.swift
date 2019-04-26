@@ -27,9 +27,7 @@ public class UserCategoryDao: BaseDao, UserCategoryDataSource {
     
     public func findAll() throws -> [UserCategory] {
         
-        guard let elements = try realmManager.getObjects(type: UserCategoryModel.self) else {
-            return []
-        }
+        let elements = try realmManager.getObjects(type: UserCategoryModel.self)
     
         return elements.map({
     
@@ -41,9 +39,7 @@ public class UserCategoryDao: BaseDao, UserCategoryDataSource {
     func find(by ids: [Int]) throws -> [UserCategory] {
         let whereCond = QueryBuilder().ids(ids: ids).build()
         
-        guard let results = try realmManager.getObjects(type: UserCategoryModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let results = try realmManager.getObjects(type: UserCategoryModel.self).filter(whereCond)
         
         return results.map {
             ($0 as! UserCategoryModel).toUserCategory()
@@ -53,9 +49,7 @@ public class UserCategoryDao: BaseDao, UserCategoryDataSource {
     func find(by id: Int) throws -> [UserCategory] {
         let whereCond = QueryBuilder().id(id: id).build()
         
-        guard let results = try realmManager.getObjects(type: UserCategoryModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let results = try realmManager.getObjects(type: UserCategoryModel.self).filter(whereCond)
         
         return results.map {
             ($0 as! UserCategoryModel).toUserCategory()
@@ -66,9 +60,7 @@ public class UserCategoryDao: BaseDao, UserCategoryDataSource {
         
         let whereCond = QueryBuilder().isExcept(isExcept: isExcept).build()
         
-        guard let results = try realmManager.getObjects(type: UserCategoryModel.self)?.filter(whereCond) else {
-            return []
-        }
+        let results = try realmManager.getObjects(type: UserCategoryModel.self).filter(whereCond)
         
         return results.map {
             ($0 as! UserCategoryModel).toUserCategory()
@@ -79,7 +71,7 @@ public class UserCategoryDao: BaseDao, UserCategoryDataSource {
         
         let whereCond = QueryBuilder().code(code: code).build()
         
-        guard let obj = try realmManager.getObjects(type: UserCategoryModel.self)?.filter(whereCond).first else {
+        guard let obj = try realmManager.getObjects(type: UserCategoryModel.self).filter(whereCond).first else {
             return nil
         }
         
@@ -99,9 +91,9 @@ public class UserCategoryDao: BaseDao, UserCategoryDataSource {
     }
     
     public func removeAll() throws {
-        if let objects = try realmManager.getObjects(type: UserCategoryModel.self) {
-            try realmManager.deleteObject(objs: objects)
-        }
+        let objects = try realmManager.getObjects(type: UserCategoryModel.self)
+        try realmManager.deleteObject(objs: objects)
+        
     }
  
 }
