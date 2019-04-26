@@ -36,14 +36,13 @@ class AnalysisRepository: AnalysisRepo {
         self.udfManager = udfManager
 //        self.resourceApi = resourceApi
         
-        generateDatas()
     }
     
     func clearCache() {
          self.analysisResults = nil
     }
     
-    func generateDatas() {
+    func generateDatas(callback: @escaping (Bool) -> ()) {
         self.appExecutor.diskIO.async {
             
             do {
@@ -59,9 +58,16 @@ class AnalysisRepository: AnalysisRepo {
                     }
                     
                     self.udfManager.save(key: Constants.UDFKey.AnalysisData, value: true)
+                   
+                }
+                
+                self.appExecutor.mainThread.async {
+                    callback(true)
                 }
             } catch {
-               
+                self.appExecutor.mainThread.async {
+                    callback(false)
+                }
             }
         }
     }

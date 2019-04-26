@@ -10,7 +10,7 @@ import Foundation
 import VisualParser
 
 class ResourceRepository: ResourceRepo {
-  
+
     let appExecutor: AppExecutors
     
     let categoryDao: CategoryDataSource
@@ -46,21 +46,22 @@ class ResourceRepository: ResourceRepo {
     }
     
     func sync() {
-        
         self.appExecutor.networkIO.async {
             self.getVersions { (res) in
                 
-                guard let res = res else {
-                    return
+                if let res = res {
+                    self.syncParsingRule(serverVersion: res.parsingRule)
+                    self.syncAnalysis(serverVersion: res.analysis)
+                    self.syncCategory(serverVersion: res.category)
+                    self.syncAdvertisement(serverVersion: res.ad)
+                    
                 }
-                self.syncParsingRule(serverVersion: res.parsingRule)
-                self.syncAnalysis(serverVersion: res.analysis)
-                self.syncCategory(serverVersion: res.category)
-                self.syncAdvertisement(serverVersion: res.ad)
                 
+            
             }
         }
     }
+    
     
     private func getVersions(callback: @escaping (VersionResponse?) -> ()) {
         

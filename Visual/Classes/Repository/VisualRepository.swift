@@ -49,8 +49,6 @@ class VisualRepository: VisualRepo {
 //        self.notificationDao = notificationDao
 
         self.appExecutor = appExecutor
-        
-        generateDatas()
     }
     
     func signOut(callback: @escaping (Bool) -> ()) {
@@ -84,7 +82,7 @@ class VisualRepository: VisualRepo {
         self.udfManager.save(key: Constants.UDFKey.TranPopUp, value: shouldShow)
     }
     
-    func generateDatas() {
+    func generateDatas(callback: @escaping (Bool) -> ()) {
         
         self.appExecutor.diskIO.async {
          
@@ -120,13 +118,15 @@ class VisualRepository: VisualRepo {
                     //                    try self.budgetDao.save(budgets as! [Budget])
                     //                }
                 }
+            
+                self.appExecutor.mainThread.async {
+                    callback(true)
+                }
                 
-                
-           
-               
             } catch {
-              
+                callback(false)
             }
+            
         }
     }
     

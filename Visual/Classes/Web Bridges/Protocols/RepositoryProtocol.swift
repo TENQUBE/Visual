@@ -45,4 +45,6 @@ import JavaScriptCore
     
     func isBudgetReportEnabled() -> Bool
     
+    func syncResource(_ callback: String)
+    
 }

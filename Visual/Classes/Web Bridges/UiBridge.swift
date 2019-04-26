@@ -290,5 +290,5 @@ class UIBridge: BaseBridge, UIProtocol {
         self.view?.retry()
 
     }
-    
+  
 }

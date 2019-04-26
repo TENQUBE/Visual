@@ -90,7 +90,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
                 self.loadFailPage()
                 break
             case .success:
-                 self.start(url: self.getUrl(path: self.paramPath))
+                self.start(url: self.getUrl(path: self.paramPath))
                 break
             }
         }
@@ -122,8 +122,6 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     func start(url: String) {
         
         self.mUrl = url
-
-        self.resourceRepository?.sync()
         
         // set webBridge
         self.setBridges()
@@ -144,7 +142,9 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
         let repoBridge = RepositoryBridge(webView: webViwProtocol,
                                           visualRepository: visualRepository!,
                                           syncTranRepository: syncTranRepository!,
-                                          analysisRepository: analysisRepository!)
+                                          analysisRepository: analysisRepository!,
+                                          resourceRepository: resourceRepository!)
+        
         let systemBridge = SystemBridge(webView: webViwProtocol)
         
         let actionBridge = ActionBridge(webView: webViwProtocol,

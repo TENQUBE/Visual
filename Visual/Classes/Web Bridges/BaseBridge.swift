@@ -24,19 +24,25 @@ class BaseBridge: NSObject{
     func callback<T:Codable>(callback: String, obj: T) {
  
         var json = ""
+   
         do {
             json = try Utill.encodeJSON(obj: obj)
         } catch {
             json = obj as! String
         }
+    
         
         let script = getJs(callback: callback, data: json)
         //            self.webView.ja
         print(script)
         
+        execute(script: script)
+       
+    }
+    
+    func execute(script: String) {
         self.webViewProtocol.executeJs(js: script)
         
-       
     }
     
 }

@@ -18,7 +18,7 @@ protocol VisualRepo {
     
     func getWebUrl() -> String
     
-    func generateDatas()
+    func generateDatas(callback: @escaping (Bool) -> ())
     
     func getCategories(callback: @escaping (_ res: CategoryResponse?)->())
     

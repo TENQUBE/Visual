@@ -9,20 +9,23 @@ import WebKit
 
 
 class RepositoryBridge: BaseBridge, RepositoryProtocol {
-
+   
     var visualRepository: VisualRepo?
     var syncTranRepository: SyncTranRepo?
     var analysisRepository: AnalysisRepo?
+    var resourceRepository: ResourceRepo?
     
     init(webView: WebViewProtocol,
          visualRepository: VisualRepo,
          syncTranRepository: SyncTranRepo,
-         analysisRepository: AnalysisRepo) {
+         analysisRepository: AnalysisRepo,
+         resourceRepository: ResourceRepo) {
         
         super.init(webView: webView)
         self.visualRepository = visualRepository
         self.syncTranRepository = syncTranRepository
         self.analysisRepository = analysisRepository
+        self.resourceRepository = resourceRepository
     }
     
     func getCategories(_ callback: String) {
@@ -352,6 +355,27 @@ class RepositoryBridge: BaseBridge, RepositoryProtocol {
         //        return self.visualRepository.isBudgetReportEnabled()
         
         return false
+    }
+    
+    func syncResource(_ callback: String) {
+        print("syncResource")
+        
+        self.visualRepository?.generateDatas(callback: { (suc) in
+          print("suc", suc)
+            self.analysisRepository?.generateDatas(callback: { (suc2) in
+                let success = suc && suc2
+
+                print("suc", suc)
+                print("suc2", suc2)
+
+                print("success", success)
+                
+                super.callback(callback: callback, obj: Success(success: success))
+                
+                self.resourceRepository?.sync()
+                
+            })
+        })
     }
     
 }
