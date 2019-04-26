@@ -16,9 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        VisualManager.shared() // 초기 데이터 저장을 위해 선언 해주세요
-    
+
         return true
     }
 

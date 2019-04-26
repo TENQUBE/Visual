@@ -361,13 +361,8 @@ class RepositoryBridge: BaseBridge, RepositoryProtocol {
         print("syncResource")
         
         self.visualRepository?.generateDatas(callback: { (suc) in
-          print("suc", suc)
             self.analysisRepository?.generateDatas(callback: { (suc2) in
                 let success = suc && suc2
-
-                print("suc", suc)
-                print("suc2", suc2)
-
                 print("success", success)
                 
                 super.callback(callback: callback, obj: Success(success: success))
