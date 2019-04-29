@@ -35,10 +35,7 @@ class AnalysisRepository: AnalysisRepo {
         self.analysisDao = analysisDao
         self.udfManager = udfManager
 //        self.resourceApi = resourceApi
-        
-        generateDatas { (_) in
-        
-        }
+
     }
     
     func clearCache() {

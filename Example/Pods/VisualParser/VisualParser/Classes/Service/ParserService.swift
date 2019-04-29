@@ -12,7 +12,7 @@ public class ParserService {
     private let transactionManager: TransactionManager
 
     public init(parserAPI: ParserAPI, secretKey: String) throws {
-        let repository = try Repository(RealmManager())
+        let repository = try Repository(RealmManager(), secretKey)
         self.cardManager = CardManager(repository: repository)
         self.parserManager = try ParserManager(repository: repository, secretKey: secretKey)
         self.transactionManager = TransactionManager(repository: repository, parserAPI: parserAPI)

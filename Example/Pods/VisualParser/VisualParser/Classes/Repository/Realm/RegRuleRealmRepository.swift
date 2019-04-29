@@ -6,7 +6,25 @@
 //  Copyright © 2019 tenqube. All rights reserved.
 //
 
+import CryptoSwift
+
+
 class RegRuleRealmRepository: RealmRepository, RegRuleRepository {
+    private let secretKey: String
+
+    init(manager realmManager: RealmManager, _ secretKey: String) {
+        self.secretKey = secretKey.replacingOccurrences(of: "QS", with: "KJ")
+        super.init(manager: realmManager)
+    }
+
+    func decryptAES(_ value: String) throws -> String {
+        let data = Data(base64Encoded: value)!
+        let decrypted = try AES(key: self.secretKey, iv: self.secretKey, padding: .pkcs5).decrypt(data.bytes)
+        let decryptedData = Data(decrypted)
+
+        return String(bytes: decryptedData.bytes, encoding: .utf8) ?? ""
+    }
+
     func findAll() throws -> [RegRuleData] {
         var results: [RegRuleData] = []
 
@@ -16,7 +34,7 @@ class RegRuleRealmRepository: RealmRepository, RegRuleRepository {
             if let regRuleModel = obj as? ParserRegRuleModel {
                 results.append(try RegRuleData((regId: regRuleModel.regId,
                                                 repSender: regRuleModel.repSender,
-                                                regExpression: regRuleModel.regExpression,
+                                                regExpression: self.decryptAES(regRuleModel.regExpression),
                                                 cardName: regRuleModel.cardName,
                                                 cardType: regRuleModel.cardType,
                                                 cardSubType: regRuleModel.cardSubType,
@@ -49,7 +67,7 @@ class RegRuleRealmRepository: RealmRepository, RegRuleRepository {
             if let regRuleModel = obj as? ParserRegRuleModel {
                 results.append(try RegRuleData((regId: regRuleModel.regId,
                                                 repSender: regRuleModel.repSender,
-                                                regExpression: regRuleModel.regExpression,
+                                                regExpression: self.decryptAES(regRuleModel.regExpression),
                                                 cardName: regRuleModel.cardName,
                                                 cardType: regRuleModel.cardType,
                                                 cardSubType: regRuleModel.cardSubType,
@@ -81,7 +99,7 @@ class RegRuleRealmRepository: RealmRepository, RegRuleRepository {
 
         return try RegRuleData((regId: regRuleModel.regId,
                                 repSender: regRuleModel.repSender,
-                                regExpression: regRuleModel.regExpression,
+                                regExpression: self.decryptAES(regRuleModel.regExpression),
                                 cardName: regRuleModel.cardName,
                                 cardType: regRuleModel.cardType,
                                 cardSubType: regRuleModel.cardSubType,

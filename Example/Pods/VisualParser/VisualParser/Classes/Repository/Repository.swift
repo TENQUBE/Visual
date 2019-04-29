@@ -20,13 +20,13 @@ class Repository {
         case canNotInitRepository
     }
 
-    init(_ dbManager: DbManager) throws {
+    init(_ dbManager: DbManager, _ secretKey: String) throws {
         guard let realmManager = dbManager as? RealmManager else {
             throw RepositoryError.canNotInitRepository
         }
 
         self.dbManager = realmManager
-        self.regRule = RegRuleRealmRepository(manager: realmManager)
+        self.regRule = RegRuleRealmRepository(manager: realmManager, secretKey)
         self.regRuleVersion = RegRuleVersionRealmRepository(manager: realmManager)
         self.sender = SenderRealmRepository(manager: realmManager)
         self.repSenderName = RepSenderNameRealmRepository(manager: realmManager)
