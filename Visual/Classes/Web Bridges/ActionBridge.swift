@@ -55,7 +55,7 @@ class ActionBridge: BaseBridge, ActionProtocol {
        
         guard let fullSms = UIPasteboard.general.string,
             !fullSms.isEmpty else {
-                let alert = UIAlertController(title: "복사된 내용이 없습니다", message: "", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "복사된 내용이 없습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
                 let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default){(_) in
                     
                 }

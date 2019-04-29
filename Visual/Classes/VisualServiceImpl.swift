@@ -40,7 +40,6 @@ public class VisualServiceImpl: VisualService {
                 VisualViewController else {
                     return
             }
-            
             vvc.paramUid = uid
             vvc.paramApiKey = self.apiKey
             vvc.paramLayer = self.layer

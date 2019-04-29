@@ -49,6 +49,10 @@ class VisualRepository: VisualRepo {
 //        self.notificationDao = notificationDao
 
         self.appExecutor = appExecutor
+        
+        generateDatas { (_) in
+            
+        }
     }
     
     func signOut(callback: @escaping (Bool) -> ()) {
@@ -214,6 +218,10 @@ class VisualRepository: VisualRepo {
                         let userCate = userCateDict[tran.userCategoryId],
                         let category = categoryDict[tran.code] else {
                             continue
+                    }
+                    
+                    if(userCate.isExcept || card.isExcept) {
+                        continue
                     }
                     
                     results.append(JoinedTransaction(transaction: tran,

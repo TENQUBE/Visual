@@ -33,9 +33,10 @@ class Parser: ParserProtocol {
     }
     
     public func getRuleVersion() throws -> Int {
-        if self.parserService == nil {
+        if(self.parserService == nil) {
             self.parserService = try self.createParser()
         }
+        
         return try self.parserService?.getParserVersion() ?? 0
     }
     
@@ -115,7 +116,14 @@ class Parser: ParserProtocol {
                                     regRules: regRules,
                                     senders: senders,
                                     repSenderNames: repSenders)
+        
+        if(self.parserService == nil) {
+            self.parserService = try self.createParser()
+        }
+        
         try self.parserService?.saveParserData(parserData: parserData)
+        
+        self.parserService = nil
     }
     
     public func createTransactions(_ fullSmses: [String],
@@ -124,11 +132,11 @@ class Parser: ParserProtocol {
         self.appExecutor.diskIO.async {
             
             do {
-                if self.parserService == nil {
-                   self.parserService = try self.createParser()
+                if(self.parserService == nil) {
+                    self.parserService = try self.createParser()
                 }
                 
-                self.parserService!.createTransactions(fullSmses, completion: { (err, trans) in
+                try self.parserService?.createTransactions(fullSmses, completion: { (err, trans) in
                     
                     let transactions = trans.map {
                         

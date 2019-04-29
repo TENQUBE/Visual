@@ -36,6 +36,9 @@ class AnalysisRepository: AnalysisRepo {
         self.udfManager = udfManager
 //        self.resourceApi = resourceApi
         
+        generateDatas { (_) in
+        
+        }
     }
     
     func clearCache() {

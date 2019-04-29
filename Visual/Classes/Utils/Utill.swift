@@ -10,6 +10,16 @@ import Foundation
 
 class Utill {
     
+//    let key = "raviraviraviraviraviraviraviravi" // length == 32
+//    let iv = "0000000000000000" // length == 16
+//    let s = "hai"
+//    let enc = try! s.aesEncrypt(key: key, iv: iv)
+//    print("ENCRYPT",enc)
+//    // let encc = "Kw3/2fVvzam7RoKn44/Hqg==\n"
+//    let dec = try! enc.aesDecrypt(key: key, iv: iv)
+//    print("DECRYPT",dec)
+//
+
     static func encodeJSON<T:Codable>(obj: T) throws -> String {
         let jsonData = try JSONEncoder().encode(obj)
         let json = String(data: jsonData, encoding: String.Encoding.utf8)!

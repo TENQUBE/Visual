@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Visual'
-  s.version          = '0.2.7'
+  s.version          = '0.2.8'
   s.summary          = 'A short description of Visual.'
 
 # This description is used to generate tags and improve search results.
@@ -43,7 +43,6 @@ Pod::Spec.new do |s|
    s.dependency 'SwiftLint'
    s.dependency 'RealmSwift'
    s.dependency 'SwiftyJSON'
-   
    s.dependency 'VisualParser'
    
  
