@@ -136,7 +136,7 @@ class Parser: ParserProtocol {
                     self.parserService = try self.createParser()
                 }
                 
-                try self.parserService?.createTransactions(fullSmses, completion: { (err, trans) in
+                self.parserService?.createTransactions(fullSmses, completion: { (err, trans) in
                     
                     let transactions = trans.map {
                         

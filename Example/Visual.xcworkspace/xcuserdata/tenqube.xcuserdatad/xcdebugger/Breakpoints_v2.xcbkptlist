@@ -10,23 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Parser/Parser.swift"
-            timestampString = "578225471.753861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "saveParserData(parserData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Visual/Classes/Parser/Parser.swift"
-            timestampString = "578225471.7559479"
+            timestampString = "578226647.52053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -38,15 +22,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Parser/Parser.swift"
-            timestampString = "578225471.75631"
+            timestampString = "578226647.520963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
+            landmarkName = "saveParserData(parserData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Parser/Parser.swift"
+            timestampString = "578226647.521273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "createTransactions(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -298,7 +298,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578225475.181381"
+                  timestampString = "578226648.191386"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -313,7 +313,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578225475.183454"
+                  timestampString = "578226648.193959"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -328,7 +328,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578225475.186039"
+                  timestampString = "578226648.196341"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
