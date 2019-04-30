@@ -18,8 +18,7 @@ class VisualRepository: VisualRepo {
     let currencyDao: CurrencyDataSource
     let userCateDao: UserCategoryDataSource
     let tranDao: TransactionDataSource
-    
-    var isLoading: Bool
+  
 //    let budgetDao: BudgetDataSource
 //    let notificationDao: NotificationDataSource
     

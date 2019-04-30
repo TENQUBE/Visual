@@ -123,7 +123,6 @@ class Parser: ParserProtocol {
         
         try self.parserService?.saveParserData(parserData: parserData)
         
-        self.parserService = nil
     }
     
     public func createTransactions(_ fullSmses: [String],
