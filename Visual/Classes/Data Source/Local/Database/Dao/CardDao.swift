@@ -121,4 +121,43 @@ public class CardDao: BaseDao, CardDataSource {
         try realmManager.deleteObject(objs: objects)
         
     }
+    
+    func isExist(by name: String, _ type: Int, _ subType: Int) throws -> Bool {
+        
+        let whereCond = QueryBuilder()
+            .cardName(name: name)
+            .and()
+            .cardType(type: type)
+            .and()
+            .cardSubType(subType: subType)
+            .build()
+        
+        let result = try realmManager.getObjects(type: CardModel.self).filter(whereCond).first
+        
+        return result != nil
+    }
+    
+    func save(_ element: Card) throws -> Int {
+        
+        let model = CardModel()
+        model.id = try self.realmManager.incrementID(type: CardModel.self)
+        model.name = element.name
+        model.type = element.type
+        
+        model.subType = element.subType
+        model.changeName = element.changeName
+        model.changeType = element.changeType
+        model.changeSubType = element.changeSubType
+        model.billingDay = element.billingDay
+        model.balance = element.balance
+        model.memo = element.memo
+        model.isExcept = element.isExcept
+        model.isCustom = element.isCustom
+        model.isDeleted = element.isDeleted
+        
+        try self.realmManager.saveObjects(objs: model)
+        
+        return model.id
+    }
+    
 }

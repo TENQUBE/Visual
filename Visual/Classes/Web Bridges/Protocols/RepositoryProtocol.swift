@@ -47,4 +47,6 @@ import JavaScriptCore
     
     func syncResource(_ callback: String)
     
+    func addPayment(_ params: String)
+    
 }

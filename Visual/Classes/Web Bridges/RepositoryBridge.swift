@@ -9,7 +9,7 @@ import WebKit
 
 
 class RepositoryBridge: BaseBridge, RepositoryProtocol {
-   
+    
     var visualRepository: VisualRepo?
     var syncTranRepository: SyncTranRepo?
     var analysisRepository: AnalysisRepo?
@@ -371,6 +371,31 @@ class RepositoryBridge: BaseBridge, RepositoryProtocol {
                 
             })
         })
+    }
+    
+    func addPayment(_ params: String) {
+        print("addPayment", params)
+        var request: AddPaymentRequest?
+        
+        do {
+            
+            request = try Utill.decodeJSON(from: params)
+            try request!.checkParams()
+            
+            self.visualRepository?.insertCard(name: request!.name, type: request!.type, callback: { (id) in
+                
+                self.analysisRepository?.clearCache()
+                super.callback(callback: request!.callbackJS, obj: AddPaymentResponse(id: id))
+                
+            })
+            
+        } catch {
+            guard let callback = request?.callbackJS else {
+                return
+            }
+            
+            super.callback(callback: callback, obj: AddPaymentResponse(id: -1))
+        }
     }
     
 }

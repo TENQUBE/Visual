@@ -11,7 +11,7 @@ import JavaScriptCore
 
 class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
    
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+//    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var webView: UIWebView!
     
     var visualViewDelegate: VisualViewDelegate?
@@ -301,14 +301,14 @@ extension VisualViewController: UIWebViewDelegate {
     }
     
     func setSpinnserAnim(isActive: Bool) {
-        self.appExecutor?.mainThread.async {
-         
-            if isActive {
-                self.spinner.startAnimating()
-            } else {
-                self.spinner.stopAnimating()
-            }
-        }
+//        self.appExecutor?.mainThread.async {
+//         
+//            if isActive {
+//                self.spinner.startAnimating()
+//            } else {
+//                self.spinner.stopAnimating()
+//            }
+//        }
     }
 }
 

@@ -850,6 +850,46 @@ class VisualRepository: VisualRepo {
         return false
     }
     
+    func insertCard(name: String, type: Int, callback: @escaping(_ res: Int)->()) {
+        
+        self.appExecutor.diskIO.async {
+            
+            do {
+                
+                let isExist = try self.cardDao.isExist(by: name, type, 0)
+                if isExist {
+                    callback(-1)
+                } else {
+                   
+                    let card = Card((
+                        id:0,
+                        name: name,
+                        type: type,
+                        subType: 0,
+                        changeName: name,
+                        changeType: type,
+                        changeSubType: 0,
+                        billingDay: 1,
+                        balance: 0.0,
+                        memo: "",
+                        isExcept: false,
+                        isCustom: true,
+                        isDeleted: false
+                    ))
+                    
+                    let id = try self.cardDao.save(card)
+                    callback(id)
+                    
+                }
+            
+                
+            } catch {
+                callback(-1)
+            }
+            
+        }
+    }
+
     
 }
 

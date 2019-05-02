@@ -16,11 +16,15 @@ protocol CardDataSource {
 
     func find(by name: String, _ type: Int, _ subType: Int, balance: Double) throws -> Card
     
+    func isExist(by name: String, _ type: Int, _ subType: Int) throws -> Bool
+    
     func find(by cardIds: [Int]) throws -> [Card]
     
     func find(by isExcept: Bool) throws -> [Card]
     
     func save(_ elements: [Card]) throws
+    
+    func save(_ elements: Card) throws -> Int
     
     func removeAll() throws
 }

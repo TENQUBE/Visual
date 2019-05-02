@@ -56,6 +56,9 @@ protocol VisualRepo {
     
     func isBudgetReportEnabled() -> Bool
     
+    func insertCard(name: String, type: Int, callback: @escaping(_ res: Int)->())
+
+    
 //    func settingNotification(req: SettingNotiRequest, callback: @escaping(_ res: Bool)->())
     
 //    func getNotificationSettings(callback: @escaping(_ res: SettingNotiResponse?)->())

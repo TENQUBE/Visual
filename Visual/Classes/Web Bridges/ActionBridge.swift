@@ -110,22 +110,26 @@ class ActionBridge: BaseBridge, ActionProtocol {
             let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
             
             self.visualRepository?.getTransactions(callback: { (transactions) in
-                var csvText = "id,identifier,cardId,userCategoryId,companyId,companyName,companyAddress,code,spentDate,finishDate,lat,lng,spentMoney,oriSpentMoney,installmentCnt,keyword,searchKeyword,repeatType,currency,dwType,fullSms,smsDate,smsType,regId,isOffset,isCustom,isUserUpdate,isUpdateAll,memo,classCode,isSynced,cardName,cardType,cardSubType,cardChangeName,cardChangeType,cardChangeSubType,billingDay,balance,cardMemo,cardIsExcept,cateIsExcept,large,medium,small"
+                var csvText = "날짜,상태,금액,내역,결제수단,카테고리,메모\n"
                 for tran in transactions {
                     let transaction = tran.transaction
                     let card = tran.card
-                    let userCate = tran.userCate
                     let category = tran.category
 
                     print("tran", tran)
                     
-                    let newLine = "\(transaction.id),\(transaction.identifier),\(transaction.cardId),\(transaction.userCategoryId),\(transaction.companyId),\(transaction.companyName),\(transaction.companyAddress),\(transaction.code),\(transaction.spentDate),\(transaction.finishDate),\(transaction.lat),\(transaction.lng),\(transaction.spentMoney),\(transaction.oriSpentMoney),\(transaction.installmentCnt),\(transaction.keyword),\(transaction.searchKeyword),\(transaction.repeatType),\(transaction.currency),\(transaction.dwType),\(String(describing: transaction.fullSms)),\(String(describing: transaction.smsDate)),\(transaction.smsType),\(transaction.regId),\(transaction.isOffset),\(transaction.isCustom),\(transaction.isUserUpdate),\(transaction.isUpdateAll),\(transaction.memo),\(transaction.classCode),\(transaction.isSynced),\(card.name),\(card.type),\(card.subType),\(card.changeName),\(card.changeType),\(card.changeSubType),\(card.billingDay),\(card.balance),\(card.memo),\(card.isExcept),\(userCate.isExcept),\(category.large),\(category.medium),\(category.small)"
-
+                    let date = transaction.spentDate
+                    let state = transaction.spentMoney < 0 ? "취소" : "승인"
+                    let amount = abs(transaction.spentMoney)
+                    let keyword = transaction.keyword.replacingOccurrences(of: ",", with: " ")
+                    let payment = card.changeName
+                    let large = category.large
+                    let memo = transaction.memo
+                    
+                    let newLine = "\(date),\(state),\(amount),\(keyword),\(payment),\(large),\(memo)\n"
                     csvText.append(contentsOf: newLine)
 
                 }
-                
-                print("csvText", csvText)
 
                 do {
                     try csvText.write(to: path, atomically: true, encoding: String.Encoding.utf8)

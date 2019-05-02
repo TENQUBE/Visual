@@ -464,8 +464,17 @@ class Monthly: VisualAnalysis {
        
             let sum0: Double = cac.reduce(0, {$0 + ($1?.amount ?? 0)})
             
+            if sum0 == 0 {
+                return nil
+            }
+            
             let cac1 = getCAC(before: 1)
+            
             let sum1: Double = cac.reduce(0, {$0 + ($1?.amount ?? 0)})
+            
+            if sum1 == 0 {
+                return nil
+            }
 
             let percent = sum0 * 100 / self.months[0].sum
             let percentOfSamePeriod = sum1 == 0 ? 100 : (sum0 - sum1) * 100 / sum1
@@ -491,6 +500,7 @@ class Monthly: VisualAnalysis {
                 $0?.tranIds
             }.joined())
         
+            
             
             return AnalysisResult((id:content.id,
                                    categoryPriority:content.categoryPriority,

@@ -174,8 +174,8 @@ class CommonCategory: VisualAnalysis {
                 return nil
             }
             
-            let image = analysisUtil.getMediumImage(lcode: tran.category.getMcode(),
-                                                    mcode: tran.category.getLcode())
+            let image = analysisUtil.getMediumImage(lcode: tran.category.getLcode()(),
+                                                    mcode: tran.category.getMcode()())
             
     
             let mContent = before == 0 ?
