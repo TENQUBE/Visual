@@ -23,7 +23,6 @@ class ViewController: UIViewController, VisualViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        VisualManager.shared().signOut()
         // Do any additional setup after loading the view, typically from a nib.
         
     }

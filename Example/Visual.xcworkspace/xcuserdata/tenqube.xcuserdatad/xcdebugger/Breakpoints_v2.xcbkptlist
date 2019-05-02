@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Parser/Parser.swift"
-            timestampString = "578279127.8092"
+            timestampString = "578282862.969963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Parser/Parser.swift"
-            timestampString = "578279127.8105479"
+            timestampString = "578282862.970884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Parser/Parser.swift"
-            timestampString = "578279127.810722"
+            timestampString = "578282862.971104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -298,7 +298,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578229659.9630899"
+                  timestampString = "578480745.842189"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -313,7 +313,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578229659.965097"
+                  timestampString = "578480745.844036"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -328,7 +328,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578229659.967357"
+                  timestampString = "578480745.845981"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -367,6 +367,54 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "findRegRules(by:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Analysis/Helper/AnalysisUtil.swift"
+            timestampString = "578480969.91688"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "getMediumImage(lcode:mcode:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Analysis/CommonCategory.swift"
+            timestampString = "578480969.916977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "getMediumContent(content:before:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Analysis/CommonCategory.swift"
+            timestampString = "578480969.91739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "getMediumContent(content:before:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

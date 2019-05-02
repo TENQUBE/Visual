@@ -123,7 +123,7 @@ class AnalysisUtil {
     func getLargeImage(lcode: Int) -> String {
         
         guard let large = CategoryType(rawValue: lcode) else {
-            return ""
+            return "lv0_mid_beauty_skin"
         }
         
         return large.imgs[Int.random(in: 0 ..< large.imgs.count)]
@@ -275,7 +275,7 @@ class AnalysisUtil {
         default:
         
             guard let lcode = Int(lcode) else {
-                return ""
+                return "lv0_mid_beauty_skin"
             }
             
             return getLargeImage(lcode: lcode)

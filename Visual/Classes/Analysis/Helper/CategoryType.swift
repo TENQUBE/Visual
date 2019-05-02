@@ -31,7 +31,6 @@ public enum CategoryType: Int,CaseIterable {
     case withdraw = 84
     case movingAsset = 88
     
-    
     var imgs: [String] {
         switch self {
         case .food:

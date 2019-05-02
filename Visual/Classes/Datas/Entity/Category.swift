@@ -26,11 +26,13 @@ public struct Category: DataProtocol {
     }
     
     func getLcode() -> String {
-        return String(code)[0..<2]
+        let lcode = String(code)[0..<2]
+        return lcode
     }
     
     func getMcode() -> String {
-        return String(code)[2..<4]
+        let mcode = String(code)[2..<4]
+        return mcode
     }
     
     func getScode() -> String {
