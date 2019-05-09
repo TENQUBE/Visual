@@ -15,7 +15,7 @@ class VisualManager: VisualViewDelegate {
     static let dev: LayerInfo = ("LEZQmdU1Zx8hxH1PjfT7hWTzdGOQYre58AVHNgA0", LayerType.dev)
     
     private static var sharedManager: VisualManager = {
-        return VisualManager(visualService: createVisual())
+        return VisualManager(visualService: createVisual())                                     
     }()
     
     private static func createVisual() -> VisualService? {

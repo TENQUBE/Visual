@@ -385,7 +385,9 @@ class Monthly: VisualAnalysis {
         
         let summary = months[0]
         
-        if summary.sum > threeMonth.avg * 1.15 {
+        if threeMonth.avg != 0 &&
+            summary.sum > threeMonth.avg * 1.15 &&
+            months[1].sum > 0 {
             guard let month0Tran = Aggregator(transactions: summary.transactions)
                 .select(type: AggregateType.max)
                 .group(by: GroupByType.month)
@@ -470,28 +472,28 @@ class Monthly: VisualAnalysis {
             
             let cac1 = getCAC(before: 1)
             
-            let sum1: Double = cac.reduce(0, {$0 + ($1?.amount ?? 0)})
+            let sum1: Double = cac1.reduce(0, {$0 + ($1?.amount ?? 0)})
             
             if sum1 == 0 {
                 return nil
             }
 
-            let percent = sum0 * 100 / self.months[0].sum
-            let percentOfSamePeriod = sum1 == 0 ? 100 : (sum0 - sum1) * 100 / sum1
+            let percent = self.months[0].sum == 0 ? 0 : sum0 * 100 / self.months[0].sum
+            let percentOfSamePeriod = sum1 == 0 ? 0 : (sum0 - sum1) * 100 / sum1
             let samePeriodStr = percentOfSamePeriod > 0 ? "\(abs(percentOfSamePeriod).toPercent()) 증가" : "\(abs(percentOfSamePeriod).toPercent()) 감소";
         
             let foodSum0 = cac[0]?.amount ?? 0
             let cafeSum0 = cac[1]?.amount ?? 0
             let alcoholSum0 = cac[2]?.amount ?? 0
 
-            let foodSum1 = cac1[0]?.amount ?? 0
-            let cafeSum1 = cac1[1]?.amount ?? 0
-            let alcoholSum1 = cac1[2]?.amount ?? 0
+//            let foodSum1 = cac1[0]?.amount ?? 0
+//            let cafeSum1 = cac1[1]?.amount ?? 0
+//            let alcoholSum1 = cac1[2]?.amount ?? 0
 
             
-            let foodPercent = foodSum1 == 0 ? 100 :  calculator.getPercentValue(first:foodSum0, divider: foodSum1)
-            let cafePercent = cafeSum1 == 0 ? 100 :  calculator.getPercentValue(first:cafeSum0, divider: cafeSum1)
-            let alcoholPercent = alcoholSum1 == 0 ? 100 : calculator.getPercentValue(first:alcoholSum0, divider: alcoholSum1)
+            let foodPercent = calculator.getPercentByFirst(first:foodSum0, divider: sum0)
+            let cafePercent = calculator.getPercentByFirst(first:cafeSum0, divider: sum0)
+            let alcoholPercent = calculator.getPercentByFirst(first:alcoholSum0, divider: sum0)
             
             let lContentValue = sum0.toLv0Format()
             let mContentValue = "식사 \(foodPercent.toPercent())\(Constants.Separator.newLineComma.rawValue)카페/간식 \(cafePercent.toPercent())\(Constants.Separator.newLineComma.rawValue)술/유흥 \(alcoholPercent.toPercent())"
@@ -499,8 +501,10 @@ class Monthly: VisualAnalysis {
             let tranIds = Array(cac.compactMap {
                 $0?.tranIds
             }.joined())
-        
             
+            if tranIds.isEmpty {
+                return nil
+            }
             
             return AnalysisResult((id:content.id,
                                    categoryPriority:content.categoryPriority,

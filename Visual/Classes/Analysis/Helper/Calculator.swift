@@ -29,6 +29,15 @@ class Calculator {
         
     }
     
+    public func getPercentByFirst(first: Double , divider: Double ) -> Double {
+        
+        if divider == 0 {
+            return 0
+        }
+        
+        return (first * 100) / abs(divider);
+    }
+    
     public func getPercentValue(first: Double , divider: Double ) -> Double {
         
         if divider == 0 {

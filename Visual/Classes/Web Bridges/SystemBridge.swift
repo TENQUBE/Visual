@@ -18,6 +18,4 @@ class SystemBridge: BaseBridge, SystemProtocol {
         return Reachability.isConnectedToNetwork()
     }
     
-   
-        
 }

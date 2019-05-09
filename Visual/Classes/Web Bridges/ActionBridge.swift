@@ -105,7 +105,7 @@ class ActionBridge: BaseBridge, ActionProtocol {
                 throw ParameterError.invalidValue(type: "callback", name: "is empty")
             }
         
-            let fileName = "Visual.csv"
+            let fileName = "ibk-visual.csv"
             
             let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
             
@@ -120,7 +120,7 @@ class ActionBridge: BaseBridge, ActionProtocol {
                     
                     let date = transaction.spentDate
                     let state = transaction.spentMoney < 0 ? "취소" : "승인"
-                    let amount = abs(transaction.spentMoney)
+                    let amount = Int(abs(transaction.spentMoney))
                     let keyword = transaction.keyword.replacingOccurrences(of: ",", with: " ")
                     let payment = card.changeName
                     let large = category.large
@@ -150,5 +150,6 @@ class ActionBridge: BaseBridge, ActionProtocol {
         }
         
     }
+
     
 }

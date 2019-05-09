@@ -192,11 +192,17 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func show(alert: UIAlertController, animated: Bool, completion: @escaping () -> Void) {
-        self.present(alert, animated: false, completion: completion)
+        self.appExecutor?.mainThread.sync {
+            self.present(alert, animated: false, completion: completion)
+        }
     }
+       
     
     func onPageLoaded() {
-        setSpinnserAnim(isActive: false)
+        self.appExecutor?.mainThread.sync {
+             setSpinnserAnim(isActive: false)
+        }
+       
     }
     
     func setRefreshEnabled(enabled: Bool) {
@@ -204,25 +210,34 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func finish() {
-        visualViewDelegate?.onFinish()
-        self.dismiss(animated: true, completion: nil)
+        self.appExecutor?.mainThread.sync {
+            visualViewDelegate?.onFinish()
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     func retry() {
-        
-        guard let failUrl = mUrl, let url = URL(string: failUrl) else {
-            return
+        self.appExecutor?.mainThread.sync {
+            guard let failUrl = mUrl, let url = URL(string: failUrl) else {
+                return
+            }
+            self.webView.loadRequest(URLRequest(url: url))
         }
         
-        self.webView.loadRequest(URLRequest(url: url))
     }
     
     func reload() {
-        self.webView.reload()
+        self.appExecutor?.mainThread.sync {
+            self.webView.reload()
+        }
     }
     
     func addView(view: UIView) {
-        self.view.addSubview(view)
+        self.appExecutor?.mainThread.sync {
+            self.view.addSubview(view)
+
+        }
     }
     
     func getView() -> UIView {
@@ -230,48 +245,60 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
 
     func openNewView(path: String) {
-        
-        guard let vvc = self.storyboard?.instantiateViewController(withIdentifier: "Visual") as? VisualViewController else {
-            return
+        self.appExecutor?.mainThread.sync {
+            guard let vvc = self.storyboard?.instantiateViewController(withIdentifier: "Visual") as? VisualViewController else {
+                return
+            }
+            
+            vvc.paramPath = path
+            
+            self.present(vvc, animated: true)
+            
         }
         
-        vvc.paramPath = path
-        
-        self.present(vvc, animated: true)
     }
     
     func goSafari(url: URL) {
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url)
-        } else {
-            // Fallback on earlier versions
+        self.appExecutor?.mainThread.sync {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                // Fallback on earlier versions
+            }
         }
+        
         
     }
     
     func export(path: URL) {
-        print(path)
+        self.appExecutor?.mainThread.sync {
+            let vc = UIActivityViewController(activityItems: [path], applicationActivities: nil)
+            ////        vc.excludedActivityTypes = [
+            ////            UIActivity.ActivityType.assignToContact,
+            ////            UIActivity.ActivityType.saveToCameraRoll,
+            ////            UIActivity.ActivityType.postToFlickr,
+            ////            UIActivity.ActivityType.postToVimeo,
+            ////            UIActivity.ActivityType.postToTencentWeibo,
+            ////            UIActivity.ActivityType.postToTwitter,
+            ////            UIActivity.ActivityType.postToFacebook,
+            ////            UIActivity.ActivityType.openInIBooks
+            ////        ]
+            present(vc, animated: true, completion: nil)
+        }
+      
         
-        let vc = UIActivityViewController(activityItems: [path], applicationActivities: nil)
-////        vc.excludedActivityTypes = [
-////            UIActivity.ActivityType.assignToContact,
-////            UIActivity.ActivityType.saveToCameraRoll,
-////            UIActivity.ActivityType.postToFlickr,
-////            UIActivity.ActivityType.postToVimeo,
-////            UIActivity.ActivityType.postToTencentWeibo,
-////            UIActivity.ActivityType.postToTwitter,
-////            UIActivity.ActivityType.postToFacebook,
-////            UIActivity.ActivityType.openInIBooks
-////        ]
-        present(vc, animated: true, completion: nil)
     }
     
     func goMsgApp() {
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(URL(string: "sms:")!, options: [:], completionHandler: nil)
-        } else {
-            // Fallback on earlier versions
+        
+        self.appExecutor?.mainThread.sync {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(URL(string: "sms:")!, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+            }
         }
+        
     }
 }
 
