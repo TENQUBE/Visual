@@ -29,7 +29,6 @@ class AlamofireManager {
                                             do {
                                                 let decoder = JSONDecoder()
                                                 if let jsonData = response.data {
-                                                    print("json", JSON(jsonData))
                                                     let result = try decoder.decode(T.self, from: jsonData)
                                                     callback(result, nil)
                                                 } else {

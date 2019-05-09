@@ -11,7 +11,6 @@ import Alamofire
 
 extension Request {
     public func debugLog() -> Self {
-        print(self)
         return self
     }
 }
