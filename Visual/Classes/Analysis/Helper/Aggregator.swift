@@ -209,11 +209,12 @@ class Aggregator {
             return results.sorted(by: {
                 
                 if type == .asc {
-                    return $0.transaction!.transaction.spentDate > $1.transaction!.transaction.spentDate
-                } else {
                     return $0.transaction!.transaction.spentDate < $1.transaction!.transaction.spentDate
+                } else {
+                    return $0.transaction!.transaction.spentDate > $1.transaction!.transaction.spentDate
                 }
             })
+            
             
         default:
             return results.sorted(by: {

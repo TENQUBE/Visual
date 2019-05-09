@@ -298,7 +298,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578480745.842189"
+                  timestampString = "579089118.529001"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -313,7 +313,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578480745.844036"
+                  timestampString = "579089118.5314519"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -328,7 +328,7 @@
                   moduleName = "VisualParser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
-                  timestampString = "578480745.845981"
+                  timestampString = "579089118.5334769"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -377,7 +377,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Analysis/Helper/AnalysisUtil.swift"
-            timestampString = "579088571.614689"
+            timestampString = "579089118.18292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -415,6 +415,70 @@
             startingLineNumber = "177"
             endingLineNumber = "177"
             landmarkName = "getMediumContent(content:before:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Web Bridges/ActionBridge.swift"
+            timestampString = "579089118.1830601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "exportExcel(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Visual.JoinedTransaction&gt;) -&gt; () in Visual.ActionBridge.exportExcel(Swift.String) -&gt; ()"
+                  moduleName = "Visual_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Visual/Classes/Web%20Bridges/ActionBridge.swift"
+                  timestampString = "579089118.5544471"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "676">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Visual.JoinedTransaction, Visual.JoinedTransaction) -&gt; Swift.Bool in closure #1 (Swift.Array&lt;Visual.JoinedTransaction&gt;) -&gt; () in Visual.ActionBridge.exportExcel(Swift.String) -&gt; ()"
+                  moduleName = "Visual_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Visual/Classes/Web%20Bridges/ActionBridge.swift"
+                  timestampString = "579089118.556357"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Web Bridges/ActionBridge.swift"
+            timestampString = "579089118.1834379"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "exportExcel(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

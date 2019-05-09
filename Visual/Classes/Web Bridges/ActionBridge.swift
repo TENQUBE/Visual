@@ -111,7 +111,7 @@ class ActionBridge: BaseBridge, ActionProtocol {
             self.visualRepository?.getTransactions(callback: { (transactions) in
           
                 let orderedTransactions = transactions.sorted(by: {
-                    return $0.transaction.spentDate < $1.transaction.spentDate
+                    return $0.transaction.spentDate > $1.transaction.spentDate
                 })
                 
                 var csvText = "날짜,상태,금액,내역,결제수단,카테고리,메모\n"
