@@ -154,10 +154,15 @@ class Monthly: VisualAnalysis {
         var sumByCard = [String: AnalysisValue]()
         var sumByCategory = [String: AnalysisValue]()
         var filteredTransactions = [JoinedTransaction]()
+        var divider = 3
         
         for i in 1..<4 {
             let month = self.months[i]
             monthList.append(month.getMonthStr())
+            
+            if month.sum != 0 {
+                divider = i
+            }
             
             sum += month.sum
             tranids += month.tranIds
@@ -178,7 +183,7 @@ class Monthly: VisualAnalysis {
                                        sumByCategory: sumByCategory,
                                        transactions: filteredTransactions)
         
-        self.threeMonth?.avg = sum / 3
+        self.threeMonth?.avg = sum / divider
        
     }
     

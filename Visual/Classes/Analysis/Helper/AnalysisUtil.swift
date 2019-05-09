@@ -77,6 +77,27 @@ class AnalysisUtil {
         
     }
     
+    func getLargePercentStr(results: [AnalysisValue], sum: Double) -> String {
+        
+        // 주로 지출한 항목은↵↵1위 외식 (32%),↵2위 카페/간식 (22%), ↵3위 인터넷쇼핑 (21%) 입니다.
+        
+        var mList = [String]()
+        for (i, result) in results.enumerated() {
+            
+            if(i == 3) {
+                break
+            }
+            guard let tran = result.transaction else {
+                continue
+            }
+            
+            mList.append("\(i+1)위 \(tran.category.large) (\((result.amount * 100 / sum).toPercent()))")
+            
+        }
+        return mList.joined(separator: Constants.Separator.newLineComma.rawValue)
+        
+    }
+    
     func getMediumStrWithPercent(results: [AnalysisValue], sum: Double) -> String {
         
         // 1위 아울렛 (31.2만원, 32%)↵2위 의류 (32.1만원, 32%)
