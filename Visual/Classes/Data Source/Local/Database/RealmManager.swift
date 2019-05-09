@@ -11,7 +11,7 @@ class RealmManager {
     
     init() {
 
-        print("RealmManager")
+   
         let config = Realm.Configuration(
             
        

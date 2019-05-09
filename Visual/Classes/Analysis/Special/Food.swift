@@ -43,7 +43,7 @@ class Food : CommonCategory{
     
     func makeSummary() -> FoodSummary? {
         
-        print("makeSummary")
+   
         let dateRanges = Date().getDateRanges(type: DateType.lastThreeMonth)
         let filteredTransactions = filterTransactions(from: dateRanges.from, to: dateRanges.to)
         
@@ -52,19 +52,18 @@ class Food : CommonCategory{
             return nil
         }
         
-        print("foodCnt", foodCnt)
         
         let fastFoodTransactions = filterTransactions(transactions: filteredTransactions, mcode: FASTFOOD)
         
         let fastFoodCnt = fastFoodTransactions.count
-        print("fastFoodCnt", fastFoodCnt)
+
 
         if fastFoodCnt == 0 {
             return nil
         }
         
         let percent = Double(fastFoodCnt) * 100 / Double(foodCnt)
-        print("percent", percent)
+  
         guard let fastFoods = Aggregator(transactions: fastFoodTransactions).select(type: .count).group(by: .keyword).execute() else {
             return nil
         }
@@ -84,7 +83,7 @@ class Food : CommonCategory{
             return nil
         }
         
-        print(summary)
+  
         
         if summary.foodCnt > 5 &&
             summary.percent > 10 {

@@ -28,7 +28,7 @@ class VisualApi: VisualApiService {
     }
     
     func saveTransactions(request: TransactionRequest, callback: @escaping (Bool?, Error?) -> ()) {
-        print(request)
+   
         self.apiManager.call(type: VisualRouter.transaction(request)) { (response: Bool?, err: Error?) in
             callback(response, nil)
         }

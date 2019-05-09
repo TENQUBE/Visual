@@ -70,7 +70,6 @@ public enum ResourceRouter: URLRequestConvertible {
         
         request.timeoutInterval = TimeInterval(5 * 1000)
         
-        print("request", try URLEncoding.queryString.encode(request, with: parameters))
         return try URLEncoding.queryString.encode(request, with: parameters)
     }
 }

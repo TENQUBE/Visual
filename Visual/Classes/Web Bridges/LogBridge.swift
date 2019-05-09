@@ -19,7 +19,7 @@ class LogBridge: BaseBridge, LogProtocol {
     }
     
     func onKeyMetric(_ params: String) {
-        print("onKeyMetric", params)
+   
         var request: LogRequest?
         
         do {

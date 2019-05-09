@@ -377,12 +377,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Analysis/Helper/AnalysisUtil.swift"
-            timestampString = "578480969.91688"
+            timestampString = "579088571.614689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
-            landmarkName = "getMediumImage(lcode:mcode:)"
+            landmarkName = "getMediumCntStrWithPercent(results:cnt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

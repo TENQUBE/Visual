@@ -75,7 +75,6 @@ class ActionBridge: BaseBridge, ActionProtocol {
         self.isDoing = true
         
         let fullSmses = fullSms.components(separatedBy: "[Web발신]")
-        print(fullSmses)
 
         self.parser?.createTransactions(fullSmses) { (err, parsedTransactions) in
 
@@ -110,14 +109,18 @@ class ActionBridge: BaseBridge, ActionProtocol {
             let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
             
             self.visualRepository?.getTransactions(callback: { (transactions) in
+          
+                let orderedTransactions = transactions.sorted(by: {
+                    return $0.transaction.spentDate < $1.transaction.spentDate
+                })
+                
                 var csvText = "날짜,상태,금액,내역,결제수단,카테고리,메모\n"
-                for tran in transactions {
+                for tran in orderedTransactions {
                     let transaction = tran.transaction
                     let card = tran.card
                     let category = tran.category
 
-                    print("tran", tran)
-                    
+                  
                     let date = transaction.spentDate
                     let state = transaction.spentMoney < 0 ? "취소" : "승인"
                     let amount = Int(abs(transaction.spentMoney))

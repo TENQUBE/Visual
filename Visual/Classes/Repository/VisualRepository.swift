@@ -284,9 +284,9 @@ class VisualRepository: VisualRepo {
             do {
                 // 내역
                 let transactions = try self.tranDao.find(by: req)
-                print("transactions", transactions)
+             
                 let res = try self.getTransactions(transactions: transactions)
-                print(res)
+             
                 self.appExecutor.mainThread.async {
                     callback(res)
                 }
@@ -463,8 +463,7 @@ class VisualRepository: VisualRepo {
                     ))
                     
                     let tranId = try self.tranDao.save(transaction)
-                    print("tranId" , card)
-
+                
                     tranIds.append(tranId)
                 // sync transaction 추가
                     
@@ -570,7 +569,7 @@ class VisualRepository: VisualRepo {
                     do {
                         tranId = try self.tranDao.save(transaction)
                         // sync transaction 추가
-                        print(tranId)
+                 
                         self.appExecutor.mainThread.async {
                             callback(tranId)
                         }

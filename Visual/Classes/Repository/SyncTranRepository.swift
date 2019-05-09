@@ -47,8 +47,6 @@ class SyncTranRepository: SyncTranRepo {
             do {
                 let transactions = try self.tranDao.find(by: false)
                 
-                print("syncTransaction",transactions)
-                
                 let cardIds = transactions.map {
                     $0.cardId
                 }

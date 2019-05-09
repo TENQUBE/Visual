@@ -34,7 +34,7 @@ class BaseBridge: NSObject{
         
         let script = getJs(callback: callback, data: json)
         //            self.webView.ja
-        print(script)
+  
         
         execute(script: script)
        

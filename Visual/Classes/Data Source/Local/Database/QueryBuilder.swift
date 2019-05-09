@@ -90,18 +90,13 @@ class QueryBuilder {
         
         let date = Date.from(year: year, month: month) ?? Date()
         
-        print ("date", date)
-        
         let toDate = date.getNthMonth(nth: 1) ?? Date()
         let fromDate = date.getNthMonth(nth: -1 * before) ?? Date()
         
         self.format.append("spentDate >= %@ AND spentDate < %@")
         self.args.append(fromDate)
         self.args.append(toDate)
-        
-        
-        print(self.args)
-        
+    
         return self
     }
 

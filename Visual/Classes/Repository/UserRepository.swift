@@ -25,8 +25,7 @@ class UserRepository: UserRepo {
             let uid = self.udfManager.pref.string(forKey: Constants.UDFKey.UID)
             self.appExecutor.mainThread.async {
                 let isSigned = uid != nil && !uid!.isEmpty
-                
-                print(isSigned)
+             
                 callback(isSigned)
             }
         }
@@ -45,8 +44,6 @@ class UserRepository: UserRepo {
                     }
                      return
                 }
-                
-                print(rep)
        
                 self.udfManager.save(key: Constants.UDFKey.SecretKey, value: rep.results.secretKey)
                 self.udfManager.save(key: Constants.UDFKey.ResourceUrl, value: rep.results.resource.url)

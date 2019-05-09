@@ -183,7 +183,7 @@ class Monthly: VisualAnalysis {
                                        sumByCategory: sumByCategory,
                                        transactions: filteredTransactions)
         
-        self.threeMonth?.avg = sum / divider
+        self.threeMonth?.avg = sum / Double(divider)
        
     }
     

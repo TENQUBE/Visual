@@ -61,7 +61,7 @@ class SearchManager {
             var transactions = try self.transactionDao.findForApplyAll(by: distinctKeywords)
             
    
-            print("fromDbApplyAll", transactions)
+        
             
             transactions = transactions.filter {
                 $0.dwType == 0 || $0.dwType == 1
@@ -132,7 +132,7 @@ class SearchManager {
             
             var transactions = try self.transactionDao.find(by: distinctKeywords)
             
-            print("fromDb", transactions)
+       
                 
             transactions = transactions.filter {
                 $0.dwType == 0 || $0.dwType == 1
@@ -193,7 +193,7 @@ class SearchManager {
        
         self.searchApi.search(request: reqData) { (res, err) in
             
-            print("search", res)
+        
             
             let results = res.results + localData.results
             

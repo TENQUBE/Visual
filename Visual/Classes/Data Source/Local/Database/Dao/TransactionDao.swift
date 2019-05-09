@@ -25,7 +25,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
             .isDeleted(isDeleted: false)
             .build()
         
-        print(whereCond)
+    
         
         let elements = try realmManager.getObjects(type: TransactionModel.self).filter(whereCond)
         
@@ -40,7 +40,7 @@ public class TransactionDao: BaseDao, TransactionDataSource {
             .isSynced(isSynced: false)
             .build()
         
-        print(whereCond)
+
         let elements = try realmManager.getObjects(type: TransactionModel.self).filter(whereCond)
         
         return elements.map {
