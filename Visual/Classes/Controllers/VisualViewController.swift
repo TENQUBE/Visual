@@ -192,15 +192,15 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func show(alert: UIAlertController, animated: Bool, completion: @escaping () -> Void) {
-        self.appExecutor?.mainThread.sync {
+        self.appExecutor?.mainThread.async {
             self.present(alert, animated: false, completion: completion)
         }
     }
        
     
     func onPageLoaded() {
-        self.appExecutor?.mainThread.sync {
-             setSpinnserAnim(isActive: false)
+        self.appExecutor?.mainThread.async {
+             self.setSpinnserAnim(isActive: false)
         }
        
     }
@@ -210,16 +210,16 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func finish() {
-        self.appExecutor?.mainThread.sync {
-            visualViewDelegate?.onFinish()
+        self.appExecutor?.mainThread.async {
+            self.visualViewDelegate?.onFinish()
             self.dismiss(animated: true, completion: nil)
         }
         
     }
     
     func retry() {
-        self.appExecutor?.mainThread.sync {
-            guard let failUrl = mUrl, let url = URL(string: failUrl) else {
+        self.appExecutor?.mainThread.async {
+            guard let failUrl = self.mUrl, let url = URL(string: failUrl) else {
                 return
             }
             self.webView.loadRequest(URLRequest(url: url))
@@ -228,13 +228,13 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func reload() {
-        self.appExecutor?.mainThread.sync {
+        self.appExecutor?.mainThread.async {
             self.webView.reload()
         }
     }
     
     func addView(view: UIView) {
-        self.appExecutor?.mainThread.sync {
+        self.appExecutor?.mainThread.async {
             self.view.addSubview(view)
 
         }
@@ -245,7 +245,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
 
     func openNewView(path: String) {
-        self.appExecutor?.mainThread.sync {
+        self.appExecutor?.mainThread.async {
             guard let vvc = self.storyboard?.instantiateViewController(withIdentifier: "Visual") as? VisualViewController else {
                 return
             }
@@ -259,7 +259,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func goSafari(url: URL) {
-        self.appExecutor?.mainThread.sync {
+        self.appExecutor?.mainThread.async {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url)
             } else {
@@ -271,7 +271,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     }
     
     func export(path: URL) {
-        self.appExecutor?.mainThread.sync {
+        self.appExecutor?.mainThread.async {
             let vc = UIActivityViewController(activityItems: [path], applicationActivities: nil)
             ////        vc.excludedActivityTypes = [
             ////            UIActivity.ActivityType.assignToContact,
@@ -283,7 +283,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
             ////            UIActivity.ActivityType.postToFacebook,
             ////            UIActivity.ActivityType.openInIBooks
             ////        ]
-            present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
         }
       
         
@@ -291,7 +291,7 @@ class VisualViewController : UIViewController, UIContractor, WebViewProtocol {
     
     func goMsgApp() {
         
-        self.appExecutor?.mainThread.sync {
+        self.appExecutor?.mainThread.async {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(URL(string: "sms:")!, options: [:], completionHandler: nil)
             } else {
