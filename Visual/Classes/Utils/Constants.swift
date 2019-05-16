@@ -109,8 +109,7 @@ enum SearchCompany:String {
         default:
             return "NF"
         }
-        
-        
+
     }
     
     var title: String {
@@ -122,10 +121,7 @@ enum SearchCompany:String {
         default:
             return "미분류"
         }
-        
-        
     }
-    
 }
 
 enum DwType: Int {

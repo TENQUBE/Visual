@@ -201,7 +201,7 @@ class VisualRepository: VisualRepo {
             
             do {
                 // 내역
-                let transactions = try self.tranDao.find(by: req)
+                let transactions = try self.tranDao.find(by: req).filter({ $0.dwType == 1})
                 
                 let cardDict = try self.getCardDict(transactions: transactions)
                 
