@@ -27,3 +27,13 @@ kj.sa@tenqube.com, kj.sa@tenqube.com
 ## License
 
 Visual is available under the MIT license. See the LICENSE file for more info.
+
+## Version
+Using Alamofire (4.9.0)
+Using CryptoSwift (1.0.0)
+Using Realm (3.18.0)
+Using RealmSwift (3.18.0)
+Using SwiftLint (0.35.0)
+Using SwiftyJSON (5.0.0)
+Using Visual (0.3.6)
+Using VisualParser (0.3.9)
