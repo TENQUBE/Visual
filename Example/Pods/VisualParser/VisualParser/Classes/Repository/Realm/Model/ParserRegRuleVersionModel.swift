@@ -13,7 +13,7 @@ class ParserRegRuleVersionModel: Object {
     @objc dynamic var version: Int = DefaultRegVersion.version.rawValue
     @objc dynamic var updateAt: NSDate = NSDate()
 
-    override public class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "id"
     }
 }

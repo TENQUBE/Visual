@@ -29,7 +29,7 @@ class ParserRegRuleModel: Object {
     @objc dynamic var isDelete: Int = 0
     @objc dynamic var priority: Int = 0
 
-    override public class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "regId"
     }
 }

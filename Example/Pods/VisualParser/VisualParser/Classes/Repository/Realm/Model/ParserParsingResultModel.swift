@@ -12,7 +12,7 @@ class ParserParsingResultModel: Object {
     @objc dynamic var sender: String = ""
     @objc dynamic var regRuleId: Int = 0
 
-    override public class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "sender"
     }
 }

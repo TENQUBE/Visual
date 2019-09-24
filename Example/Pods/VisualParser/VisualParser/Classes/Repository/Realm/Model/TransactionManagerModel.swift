@@ -19,7 +19,7 @@ class TransactionManagerModel: Object {
     @objc dynamic var isCancel: Int = 0
     @objc dynamic var categoryCode: Int = 0
 
-    override public class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "identifier"
     }
 

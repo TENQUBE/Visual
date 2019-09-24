@@ -4,7 +4,8 @@ target 'Visual_Example' do
   pod 'Visual', :path => '../'
 
   pod 'VisualParser', :git => 'https://github.com/TENQUBE/VisualParser.git'
- 
+#  pod 'Realm', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
+#  pod 'RealmSwift', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master', submodules: true
  target 'Visual_Tests' do
     inherit! :search_paths
 

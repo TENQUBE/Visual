@@ -15,7 +15,7 @@ class TransactionCardModel: Object {
     @objc dynamic var subType: Int = 0
     @objc dynamic var balance: Double = 0.0
 
-    override public class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "id"
     }
 }

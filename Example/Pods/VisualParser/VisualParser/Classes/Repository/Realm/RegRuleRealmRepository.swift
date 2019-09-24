@@ -18,7 +18,7 @@ class RegRuleRealmRepository: RealmRepository, RegRuleRepository {
     }
 
     func decryptAES(_ value: String) throws -> String {
-        let data = Data(base64Encoded: value)!
+        guard let data = Data(base64Encoded: value) else { return "" }
         let decrypted = try AES(key: self.secretKey, iv: self.secretKey, padding: .pkcs5).decrypt(data.bytes)
         let decryptedData = Data(decrypted)
 
@@ -31,7 +31,7 @@ class RegRuleRealmRepository: RealmRepository, RegRuleRepository {
         let objects = try realmManager.getObjects(table: ParserRegRuleModel.self)
 
         for obj in objects {
-            if let regRuleModel = obj as? ParserRegRuleModel {
+            if let regRuleModel = obj as? ParserRegRuleModel, regRuleModel.regId != 0 {
                 results.append(try RegRuleData((regId: regRuleModel.regId,
                                                 repSender: regRuleModel.repSender,
                                                 regExpression: self.decryptAES(regRuleModel.regExpression),
@@ -64,7 +64,7 @@ class RegRuleRealmRepository: RealmRepository, RegRuleRepository {
         let objects = try realmManager.getObjects(table: ParserRegRuleModel.self, cond: whereCond)
 
         for obj in objects.sorted(byKeyPath: "priority", ascending: false) {
-            if let regRuleModel = obj as? ParserRegRuleModel {
+            if let regRuleModel = obj as? ParserRegRuleModel, regRuleModel.regId != 0 {
                 results.append(try RegRuleData((regId: regRuleModel.regId,
                                                 repSender: regRuleModel.repSender,
                                                 regExpression: self.decryptAES(regRuleModel.regExpression),

@@ -15,7 +15,7 @@ class ParserSenderModel: Object {
     @objc dynamic var repSender: String = ""
     @objc dynamic var isDelete: Int = 0
 
-    override public class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "senderId"
     }
 }
