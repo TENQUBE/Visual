@@ -8,8 +8,12 @@ PODS:
     - Realm (= 3.18.0)
   - SwiftLint (0.35.0)
   - SwiftyJSON (5.0.0)
-  - Visual (0.3.6):
+  - Visual (0.3.7):
+    - Alamofire
+    - Realm
+    - RealmSwift
     - SwiftLint
+    - SwiftyJSON
     - VisualParser
   - VisualParser (0.3.9):
     - Alamofire
@@ -48,7 +52,7 @@ SPEC CHECKSUMS:
   RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  Visual: a93e0c2e171517edac6e7ef8ff324e5fbfbad3f8
+  Visual: 7c27aaad4014bd59638042096567bfd2ec8d69a8
   VisualParser: cc26b7538ca87d0e3803e4274c6b69c5fa67e294
 
 PODFILE CHECKSUM: 1315f245eed26221901510233c8545e64f39c5c8
