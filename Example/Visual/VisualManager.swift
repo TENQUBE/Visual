@@ -25,7 +25,7 @@ class VisualManager: VisualViewDelegate {
         do {
             //debug -> dev, release -> prod 로 설정해주세요
 //            visualService = try VisualServiceImpl(apiKey: dev.apiKey, layer: dev.layer) // 개발
-            visualService = try VisualServiceImpl(apiKey: prod.apiKey, layer: prod.layer) // 상용
+            visualService = try VisualServiceImpl(apiKey: dev.apiKey, layer: dev.layer) // 상용
         } catch {
     
         }

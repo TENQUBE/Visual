@@ -308,6 +308,53 @@
             endingLineNumber = "59"
             landmarkName = "createParsingData(by:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FA24839F-BA85-43F5-BCBF-C00427FD4519 - 58906dacb4bda0e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VisualParser.ParserManager.(createParsingData in _FC895D09A1C770F52BD4320061DFE10F)(by: VisualParser.FullSmsData, _: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Optional&lt;VisualParser.ParsingData&gt;"
+                  moduleName = "VisualParser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "FA24839F-BA85-43F5-BCBF-C00427FD4519 - 58906dacb4bda0e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VisualParser.ParserManager.(createParsingData in _FC895D09A1C770F52BD4320061DFE10F)(by: VisualParser.FullSmsData, _: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Optional&lt;VisualParser.ParsingData&gt;"
+                  moduleName = "VisualParser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "1864">
+               </Location>
+               <Location
+                  uuid = "FA24839F-BA85-43F5-BCBF-C00427FD4519 - 58906dacb4bda0e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VisualParser.ParserManager.(createParsingData in _FC895D09A1C770F52BD4320061DFE10F)(by: VisualParser.FullSmsData, _: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Optional&lt;VisualParser.ParsingData&gt;"
+                  moduleName = "VisualParser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Example/Pods/VisualParser/VisualParser/Classes/Domain/Parser/ParserManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "3448">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -424,7 +471,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
                   endingLineNumber = "113"
-                  offsetFromSymbolStart = "648">
+                  offsetFromSymbolStart = "572">
                </Location>
                <Location
                   uuid = "A9A6213D-A1D6-4A92-8296-C4B6A272DF56 - 3a089eaec33c0311"
@@ -439,7 +486,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
                   endingLineNumber = "114"
-                  offsetFromSymbolStart = "109">
+                  offsetFromSymbolStart = "108">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -465,7 +512,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AD20801A-2705-4084-ACEB-04AC2E0C8D14"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/VisualParser/VisualParser/Classes/Service/ParserService.swift"
@@ -478,7 +525,7 @@
             <Locations>
                <Location
                   uuid = "AD20801A-2705-4084-ACEB-04AC2E0C8D14 - 4708529df7dbab8"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "VisualParser.ParserService.createTransactions(_: Swift.Array&lt;Swift.String&gt;, completion: (Swift.Optional&lt;Swift.Error&gt;, Swift.Array&lt;VisualParser.TransactionData&gt;) -&gt; ()) -&gt; ()"
@@ -493,7 +540,7 @@
                </Location>
                <Location
                   uuid = "AD20801A-2705-4084-ACEB-04AC2E0C8D14 - 383ad9ebb83408d"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, Swift.Array&lt;VisualParser.ParsingData&gt;) -&gt; () in VisualParser.ParserService.createTransactions(_: Swift.Array&lt;Swift.String&gt;, completion: (Swift.Optional&lt;Swift.Error&gt;, Swift.Array&lt;VisualParser.TransactionData&gt;) -&gt; ()) -&gt; ()"
@@ -513,7 +560,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5EBE6C96-CBD1-43EC-9C75-138C6827E419"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/VisualParser/VisualParser/Classes/Service/ParserService.swift"
@@ -553,7 +600,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
                   endingLineNumber = "89"
-                  offsetFromSymbolStart = "167">
+                  offsetFromSymbolStart = "180">
                </Location>
                <Location
                   uuid = "758F140A-791A-4046-A029-D8EBB12C39E4 - 5e34c8e31919d499"
@@ -568,7 +615,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
                   endingLineNumber = "92"
-                  offsetFromSymbolStart = "173">
+                  offsetFromSymbolStart = "216">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -593,7 +640,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7AEB46EC-6028-496F-8EA2-AF50876EA8C4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Visual/Classes/Parser/Parser.swift"
@@ -657,7 +704,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C5D4B114-1528-49D9-A708-BA7B9353ABB4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/VisualParser/VisualParser/Classes/Repository/Realm/RealmManager.swift"
@@ -666,6 +713,182 @@
             startingLineNumber = "15"
             endingLineNumber = "15"
             landmarkName = "createConn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81F15493-C3B5-4559-9D19-78F39092BDD6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Repository/VisualRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "generateDatas(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C847D8DC-CFC9-4ECE-83AE-4D521D880BDA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Data Source/Local/Database/Dao/CardDao.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1263B57-E061-454A-8797-786AED619428"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Data Source/Local/Database/RealmManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "saveObjects(objs:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7940FCF2-07D5-446B-9EC6-E10AAD9980DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Repository/VisualRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "getCards(callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7940FCF2-07D5-446B-9EC6-E10AAD9980DA - 67ea57c9f3a5d8e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Visual.VisualRepository.getCards(callback: (Swift.Optional&lt;Visual.CardResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Visual_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Visual/Classes/Repository/VisualRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "7940FCF2-07D5-446B-9EC6-E10AAD9980DA - 5fd650465ba8d1e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Visual.Card) -&gt; Visual.CardInfo in closure #1 () -&gt; () in Visual.VisualRepository.getCards(callback: (Swift.Optional&lt;Visual.CardResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Visual_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tenqube/Desktop/ios/library/Visual/Visual/Classes/Repository/VisualRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "565162A4-B8B0-46BF-84B1-A5A94D72B2C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Repository/VisualRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "generateDatas(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5326443C-83CC-485E-B820-3A4AE0B602BF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Repository/VisualRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "generateDatas(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16BE4F27-96A9-4FC1-B24E-CCD4307C8061"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Data Source/Local/Database/Dao/CardDao.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "save(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E636E056-22CA-46DB-A170-F5D4660EDAFD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Visual/Classes/Data Source/Local/Database/RealmManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "saveObjects(objs:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "873A28E6-C5DF-4DAA-8481-A15E035EFC9B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Visual/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "clickBtn01(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

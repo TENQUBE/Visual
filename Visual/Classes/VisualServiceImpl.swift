@@ -40,6 +40,7 @@ public class VisualServiceImpl: VisualService {
                 VisualViewController else {
                     return
             }
+            vvc.modalPresentationStyle = .fullScreen
             vvc.paramUid = uid
             vvc.paramApiKey = self.apiKey
             vvc.paramLayer = self.layer
