@@ -14,8 +14,8 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B570CA32EE73C4B4D0B7C97D245DFCF9"
-               BuildableName = "VisualParser.framework"
+               BlueprintIdentifier = "58E830CE92DB8AD38F612F050D815E91"
+               BuildableName = "libVisualParser.a"
                BlueprintName = "VisualParser"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

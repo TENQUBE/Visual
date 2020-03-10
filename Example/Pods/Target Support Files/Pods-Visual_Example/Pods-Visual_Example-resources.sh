@@ -98,9 +98,11 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Visual/Visual.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/VisualParser/VisualParser.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Visual/Visual.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/VisualParser/VisualParser.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
