@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8287306513A87FF3FB1D6933F24DF813"
+               BlueprintIdentifier = "298F121D7F75B6492217A0611B1825EB"
                BuildableName = "Visual.bundle"
                BlueprintName = "Visual-Visual"
                ReferencedContainer = "container:Pods.xcodeproj">

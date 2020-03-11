@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1006E8274E029F3F260E0BCA /* libPods-Visual_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D897430ECF53FE6CC29F5198 /* libPods-Visual_Tests.a */; };
-		27B9BF419BE89946B27B09C1 /* libPods-Visual_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C0C2E46049AD2B507BC082 /* libPods-Visual_Example.a */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		E2B199FF3A42C23526AED652 /* Pods_Visual_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25B0470F846CE268F21F88 /* Pods_Visual_Tests.framework */; };
 		ED2DB4872265C5070072B864 /* VisualManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DB4862265C5070072B864 /* VisualManager.swift */; };
+		FC7FF061F87110D135EE765C /* Pods_Visual_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A418DBEBFDA5144D73C6343 /* Pods_Visual_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 		112AE702EB9E3803405B5B19 /* Pods-Visual_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Tests/Pods-Visual_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3897CEE1F8D1C2BF4D8AD43B /* Pods-Visual_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Example/Pods-Visual_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		443C2ED1B8301C3D2261DEC2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5A418DBEBFDA5144D73C6343 /* Pods_Visual_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* Visual_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visual_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,11 +44,10 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6703869C54EFC565C3D5D8F5 /* Pods-Visual_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Tests/Pods-Visual_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		77C0C2E46049AD2B507BC082 /* libPods-Visual_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Visual_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B25B0470F846CE268F21F88 /* Pods_Visual_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		945A0093ED2B6FD06ED41E3A /* Visual.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Visual.podspec; path = ../Visual.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		962548AE3703B62D12DA3383 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CACCC973D9A4D271FE4B8356 /* Pods-Visual_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Visual_Example/Pods-Visual_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D897430ECF53FE6CC29F5198 /* libPods-Visual_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Visual_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2DB4862265C5070072B864 /* VisualManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27B9BF419BE89946B27B09C1 /* libPods-Visual_Example.a in Frameworks */,
+				FC7FF061F87110D135EE765C /* Pods_Visual_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1006E8274E029F3F260E0BCA /* libPods-Visual_Tests.a in Frameworks */,
+				E2B199FF3A42C23526AED652 /* Pods_Visual_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +156,8 @@
 		65C2BE65FB89B12640841EC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				77C0C2E46049AD2B507BC082 /* libPods-Visual_Example.a */,
-				D897430ECF53FE6CC29F5198 /* libPods-Visual_Tests.a */,
+				5A418DBEBFDA5144D73C6343 /* Pods_Visual_Example.framework */,
+				8B25B0470F846CE268F21F88 /* Pods_Visual_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,6 +175,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				EDF72AD42243835000D43BD6 /* ShellScript */,
 				54683C46C0C04C9CCD931350 /* [CP] Copy Pods Resources */,
+				1680FF5884567CD6379B6586 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +270,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1680FF5884567CD6379B6586 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Visual_Example/Pods-Visual_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/VisualParser/VisualParser.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VisualParser.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Visual_Example/Pods-Visual_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3FAECC1792EB74079F1A6EFF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,14 +334,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Visual_Example/Pods-Visual_Example-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Visual/Visual.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/VisualParser/VisualParser.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Visual.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VisualParser.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,8 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

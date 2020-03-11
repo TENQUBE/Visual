@@ -14,8 +14,8 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3586E768226EB22112D148BAD65F1FA6"
-               BuildableName = "libVisual.a"
+               BlueprintIdentifier = "BE7CC63BDB6002DA284134F9026B4C86"
+               BuildableName = "Visual.framework"
                BlueprintName = "Visual"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

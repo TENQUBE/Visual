@@ -54,6 +54,8 @@ public class VisualServiceImpl: VisualService {
             vvc.logger = injector.logger
             vvc.appExecutor = injector.appExecutor
             vvc.visualViewDelegate = callback
+            vvc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+               
             controller.present(vvc, animated: true)
         } else {
             callback.onFinish()

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4B8665E3D49D1293B2AD055CD3B4DE5B"
+               BlueprintIdentifier = "A15FCDA7F711F8E5549ED71BAE8352AB"
                BuildableName = "VisualParser.bundle"
                BlueprintName = "VisualParser-VisualParser"
                ReferencedContainer = "container:Pods.xcodeproj">
