@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
    s.frameworks = 'UIKit', 'WebKit'
    
-   s.dependency 'Alamofire'
+   s.dependency 'Alamofire', '~> 4.9.0'
    s.dependency 'SwiftLint'
    s.dependency 'Realm', '~> 3.18.0'
 
