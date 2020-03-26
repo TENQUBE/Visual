@@ -94,7 +94,7 @@ class RealmManager {
         
         try realm.write {
             // If update = false, adds the object
-            realm.add(objs, update: true)
+            realm.add(objs, update: .modified)
         }
     }
     
