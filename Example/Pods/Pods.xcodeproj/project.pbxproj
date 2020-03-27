@@ -159,7 +159,6 @@
 		394A6D56CCB5C997853EDF22D1835BB2 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8AC31B08C20074E99011A0FE9182D /* Cafe.swift */; };
 		3AEDA7B31A80053D6012058A8A98EFD9 /* AddPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA09582FCBEAF465EF0442E0D26A59 /* AddPaymentRequest.swift */; };
 		3BD1DAFE1F3E6C9E4EB0F2099B6D6FA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FFAFDE70B35F2736EC57FC146C17FA /* Foundation.framework */; };
-		3BF92EBEDA157B75FC0BE072D57C39B9 /* contents.xcworkspacedata in Sources */ = {isa = PBXBuildFile; fileRef = 2B5178D173C7129173EDD07B16FD16CA /* contents.xcworkspacedata */; };
 		3D3EB04883E34130C14E4FE7C2583A37 /* RLMObjectBase_Dynamic.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = E3ED6263F6B08348CDCE0A63267F4A91 /* RLMObjectBase_Dynamic.h */; };
 		3D6903A463AD974D4510ACA32C7C4F15 /* primitive_list_notifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DC1E02FD386D885F206AA4EF7D25292 /* primitive_list_notifier.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		3E0749AF6C51BCF0E4A41CF1D6A76FED /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA30A16F18795D79FB54158BE138342 /* DispatchQueue+Alamofire.swift */; };
@@ -178,7 +177,6 @@
 		44359CD71302542C10ECF9C8AFFD4D0B /* keychain_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1D0547EEAFFE3247388A67F877401C4 /* keychain_helper.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		44D2D926DEB6972C27DFA858D86697E2 /* Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F8EE3C890B945CE62C50184C32121 /* Bit.swift */; };
 		4521C5EC5E715223AA410A694D37A3BA /* ParsingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D558290826441DF9D2F168DAD1853D /* ParsingData.swift */; };
-		45D09292FEF97018E6F8D25E9D28C9EA /* IDEWorkspaceChecks.plist in Sources */ = {isa = PBXBuildFile; fileRef = BC379E55C85F9D47ECB1EC15F946CC2C /* IDEWorkspaceChecks.plist */; };
 		461E230E99916089BFA99D7961E208CA /* ResourceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFD193544A1F58BCFC0D1BF520C038 /* ResourceRepository.swift */; };
 		46416920E9174D4F5958CA3CE5BD8DBF /* ParsedTransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8220A6B4234616831DDCB29F5409FAF /* ParsedTransactionData.swift */; };
 		4706CAFB6D9089FC556B733F2581ADF4 /* RLMSyncUser.mm in Sources */ = {isa = PBXBuildFile; fileRef = D73744EF3ACB297639789EC49988EED7 /* RLMSyncUser.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
@@ -931,7 +929,6 @@
 		2B2F2EDBB3D9D565FC51E5B7CA866B99 /* RegRule.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RegRule.txt; path = VisualParser/Assets/RegRule.txt; sourceTree = "<group>"; };
 		2B4791BD253B63FBA4EF72EA218EDAF6 /* CipherModeWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CipherModeWorker.swift; path = Sources/CryptoSwift/BlockMode/CipherModeWorker.swift; sourceTree = "<group>"; };
 		2B4F08826E83512B94924793BA645735 /* SearchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
-		2B5178D173C7129173EDD07B16FD16CA /* contents.xcworkspacedata */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = contents.xcworkspacedata; sourceTree = "<group>"; };
 		2B65D7F5B0EBFB5F3DD5A0C3860F2DDC /* VisualApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VisualApi.swift; sourceTree = "<group>"; };
 		2DC1443B07DFEE086F81FEC23B67B610 /* TransactionByIdsRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionByIdsRequest.swift; sourceTree = "<group>"; };
 		2EA4EC2DDF5B286F9812929BAE92D3AF /* AEAD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AEAD.swift; path = Sources/CryptoSwift/AEAD/AEAD.swift; sourceTree = "<group>"; };
@@ -1272,7 +1269,6 @@
 		BB961DC63E57E9C4C6FB7EEB76C37326 /* SystemBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemBridge.swift; sourceTree = "<group>"; };
 		BBE80CBA464DF6E4CD1A9208E44A9DDD /* sync_file.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_file.cpp; path = Realm/ObjectStore/src/sync/impl/sync_file.cpp; sourceTree = "<group>"; };
 		BBFEFDDC38FE4C8038B957098C19441F /* SystemProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemProtocol.swift; sourceTree = "<group>"; };
-		BC379E55C85F9D47ECB1EC15F946CC2C /* IDEWorkspaceChecks.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = IDEWorkspaceChecks.plist; sourceTree = "<group>"; };
 		BD51D5755ADB65629BF91B62323F1C7D /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
 		BD6AC817D4EC7C28E5E140846D3E1635 /* Content.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BD8967214B0A42FDCE563A3BD8547C0E /* RealmConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RealmConfiguration.swift; path = RealmSwift/RealmConfiguration.swift; sourceTree = "<group>"; };
@@ -1788,15 +1784,6 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
-		34E4D713920F0237071D775364EE53EC /* IBK.xcworkspace */ = {
-			isa = PBXGroup;
-			children = (
-				2B5178D173C7129173EDD07B16FD16CA /* contents.xcworkspacedata */,
-				9AFED88B52371211E017E2BEF2A54C8B /* xcshareddata */,
-			);
-			path = IBK.xcworkspace;
-			sourceTree = "<group>";
-		};
 		385048ED9FFEA4ED7F68355F46E9AC77 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -2103,7 +2090,6 @@
 				8D846B44651FBE6F2BF9900D5BEC5532 /* RepositoryBridge.swift */,
 				BB961DC63E57E9C4C6FB7EEB76C37326 /* SystemBridge.swift */,
 				07F1D62997C0F39224F65644F317EE69 /* UiBridge.swift */,
-				34E4D713920F0237071D775364EE53EC /* IBK.xcworkspace */,
 				9B5280B2C0132F2F1D59661C5F3D8B32 /* Protocols */,
 			);
 			name = "Web Bridges";
@@ -2292,14 +2278,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/RealmSwift";
-			sourceTree = "<group>";
-		};
-		9AFED88B52371211E017E2BEF2A54C8B /* xcshareddata */ = {
-			isa = PBXGroup;
-			children = (
-				BC379E55C85F9D47ECB1EC15F946CC2C /* IDEWorkspaceChecks.plist */,
-			);
-			path = xcshareddata;
 			sourceTree = "<group>";
 		};
 		9B5280B2C0132F2F1D59661C5F3D8B32 /* Protocols */ = {
@@ -3230,7 +3208,6 @@
 				D44547EAEDF854E7335313729CDC6F41 /* Content.swift in Sources */,
 				76666AA05EB18824EAAE83D57A3E1E43 /* ContentDataSource.swift in Sources */,
 				DDC88FA15503ABB609128631C898C97A /* ContentModel.swift in Sources */,
-				3BF92EBEDA157B75FC0BE072D57C39B9 /* contents.xcworkspacedata in Sources */,
 				79DD2532D56FDF596484FC616C37986C /* ContentsDao.swift in Sources */,
 				6A5D21D0FDEEB89B0685F13093AC787E /* Culture.swift in Sources */,
 				7EBAFF3610435B59C7E6F7253E424B6D /* CultureSummary.swift in Sources */,
@@ -3257,7 +3234,6 @@
 				AEBF324D53A23E90FE5242BDDCFAB5E4 /* FoodSummary.swift in Sources */,
 				C853650559084F735A2439A79690F675 /* Health.swift in Sources */,
 				AAF3D4F2226ACC0C14448F7733C999CF /* HealthSummary.swift in Sources */,
-				45D09292FEF97018E6F8D25E9D28C9EA /* IDEWorkspaceChecks.plist in Sources */,
 				CF3DA3D68D6DB6A5B1F5FD6F73278FB1 /* Injection.swift in Sources */,
 				214687C6E7E0991F8DA510E42CA82678 /* InsertTransactionRequest.swift in Sources */,
 				E8B6FE077892EC5632E09E8A116F2096 /* Int+Extention.swift in Sources */,
