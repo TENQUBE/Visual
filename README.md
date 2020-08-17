@@ -39,3 +39,9 @@ Visual is available under the MIT license. See the LICENSE file for more info.
 - Using SwiftyJSON (5.0.0)
 - Using Visual (0.3.6)
 - Using VisualParser (0.3.9)
+
+## 배포
+- xcode 최신 버전으로 클린
+- Architectures Build Active Architecture Only No 로 설정
+- 빌드 후 framework -> Modules  arm64 arm64e armv7 armv7s 지원 확인 후
+- Visual.framework 전달
