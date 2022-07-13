@@ -14,7 +14,12 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "4.9.1"))
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "4.9.1")),
+        .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", .branch("master")),
+        .package(url: "https://github.com/realm/realm-swift.git",  .exact("3.18.0")),
+        .package(url: "https://github.com/TENQUBE/VisualParser.git", .branch("develop"))
+
+        
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -22,7 +27,10 @@ let package = Package(
         .target(
             name: "Visual",
             dependencies: [
-                "Alamofire"
+                "Alamofire",
+                "SwiftyJSON",
+                .product(name: "RealmSwift", package: "realm-swift")]
+                "VisualParser"
             ]),
         .testTarget(
             name: "VisualTests",
