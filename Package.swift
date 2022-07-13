@@ -21,7 +21,7 @@ let package = Package(
         .target(
             name: "Visual",
             dependencies: [
-                .package(url: "https://github.com/Alamofire/Alamofire.git", .branch("master"))
+              "Alamofire"
             ]),
         .testTarget(
             name: "VisualTests",
