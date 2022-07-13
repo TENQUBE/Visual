@@ -20,7 +20,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Visual",
-            dependencies: []),
+            dependencies: [
+                .package(url: "https://github.com/Alamofire/Alamofire.git", .branch("master"))
+            ]),
         .testTarget(
             name: "VisualTests",
             dependencies: ["Visual"]),
