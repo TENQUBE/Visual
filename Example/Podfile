@@ -2,8 +2,7 @@ use_frameworks!
 
 target 'Visual_Example' do
    pod 'Visual', :path => '../'
-
-   pod 'VisualParser', :git => 'https://github.com/TENQUBE/VisualParser.git'
+#   pod 'VisualParser', :git => 'https://github.com/TENQUBE/VisualParser.git'
    pod 'Realm', '~> 3.18.0', :modular_headers => true
   
    pod 'RealmSwift', '~> 3.18.0', :modular_headers => true

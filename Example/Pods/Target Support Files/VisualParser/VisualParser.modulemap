@@ -1,6 +1,0 @@
-framework module VisualParser {
-  umbrella header "VisualParser-umbrella.h"
-
-  export *
-  module * { export * }
-}

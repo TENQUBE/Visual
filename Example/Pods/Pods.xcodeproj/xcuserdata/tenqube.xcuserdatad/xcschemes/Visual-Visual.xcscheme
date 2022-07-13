@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "298F121D7F75B6492217A0611B1825EB"
+               BlueprintIdentifier = "6E3762B000405F47DAB2779A7490E94C"
                BuildableName = "Visual.bundle"
                BlueprintName = "Visual-Visual"
                ReferencedContainer = "container:Pods.xcodeproj">

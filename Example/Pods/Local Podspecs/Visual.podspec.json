@@ -1,6 +1,6 @@
 {
   "name": "Visual",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "summary": "A short description of Visual.",
   "description": "visual money manager",
   "homepage": "http://tenqube.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/TENQUBE/Visual.git",
-    "tag": "0.4.1"
+    "tag": "0.4.3"
   },
   "platforms": {
     "ios": "8.0"
@@ -43,9 +43,6 @@
       "~> 3.18.0"
     ],
     "SwiftyJSON": [
-
-    ],
-    "VisualParser": [
 
     ]
   }

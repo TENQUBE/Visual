@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Visual'
-  s.version          = '0.4.3'
+  s.version          = '0.4.4'
   s.summary          = 'A short description of Visual.'
 
 # This description is used to generate tags and improve search results.
@@ -28,24 +28,23 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Visual/Classes/**/*'
+  s.source_files = 'Sources/Visual/Classes/**/*'
   s.static_framework = true
    
    s.resource_bundles = {
        'Visual' => ['Visual/Assets/**/*.{storyboard,bundle,plist}']
    }
    
-
   # s.public_header_files = 'Pod/Classes/**/*.h'
    s.frameworks = 'UIKit', 'WebKit'
    
-   s.dependency 'Alamofire', '~> 4.9.0'
+   s.dependency 'Alamofire'
    s.dependency 'SwiftLint'
    s.dependency 'Realm', '~> 3.18.0'
 
    s.dependency 'RealmSwift', '~> 3.18.0'
    s.dependency 'SwiftyJSON'
-   s.dependency 'VisualParser'
+#   s.dependency 'VisualParser'
 
  
 
