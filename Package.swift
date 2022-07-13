@@ -22,6 +22,7 @@ let package = Package(
         .target(
             name: "Visual",
             dependencies: [
+                "Alamofire"
             ]),
         .testTarget(
             name: "VisualTests",
