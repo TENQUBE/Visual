@@ -29,7 +29,7 @@ let package = Package(
             dependencies: [
                 "Alamofire",
                 "SwiftyJSON",
-                .product(name: "RealmSwift", package: "realm-swift")]
+                .product(name: "RealmSwift", package: "realm-swift"),
                 "VisualParser"
             ]),
         .testTarget(
