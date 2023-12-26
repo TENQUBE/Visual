@@ -142,11 +142,11 @@ class Injection {
         return UserDefaultsManager(pref: UserDefaults.standard)
     }
     
-    func provideSession()  -> SessionManager {
-        return Alamofire.SessionManager(configuration: URLSessionConfiguration.default)
+    func provideSession()  -> Session {
+        return Alamofire.Session(configuration: URLSessionConfiguration.default)
     }
     
-    func provideAlamofireManager(session: Alamofire.SessionManager)  -> AlamofireManager {
+    func provideAlamofireManager(session: Alamofire.Session)  -> AlamofireManager {
         return AlamofireManager(session: session)
     }
     

@@ -5,7 +5,7 @@ GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CryptoSwift/CryptoSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Realm/Realm.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift/RealmSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Visual/Visual.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VisualParser/VisualParser.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift '@executable_path/Frameworks' '@loader_path/Frameworks'
 LIBRARY_SEARCH_PATHS = $(inherited) "${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" "${PODS_ROOT}/Realm/core" /usr/lib/swift
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "Alamofire" -framework "CryptoSwift" -framework "Realm" -framework "RealmSwift" -framework "Security" -framework "SwiftyJSON" -framework "UIKit" -framework "Visual" -framework "VisualParser" -framework "WebKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "Alamofire" -framework "CFNetwork" -framework "CryptoSwift" -framework "Realm" -framework "RealmSwift" -framework "Security" -framework "SwiftyJSON" -framework "UIKit" -framework "Visual" -framework "VisualParser" -framework "WebKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Visual'
-  s.version          = '0.4.5'
+  s.version          = '0.4.6'
   s.summary          = 'A short description of Visual.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/TENQUBE/Visual.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'Sources/Visual/Classes/**/*'
   s.static_framework = true
@@ -45,7 +45,4 @@ Pod::Spec.new do |s|
    s.dependency 'RealmSwift', '~> 3.18.0'
    s.dependency 'SwiftyJSON', '~> 5.0.0'
    s.dependency 'VisualParser'
-
- 
-
 end

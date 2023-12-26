@@ -85,7 +85,7 @@ public enum VisualRouter: URLRequestConvertible {
         
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
-        request.allHTTPHeaderFields = headers
+        request.allHTTPHeaderFields = ["Content-Type": "application/json"]
         request.addValue(apiKey, forHTTPHeaderField: "x-api-key")
         request.timeoutInterval = TimeInterval(5 * 1000)
         

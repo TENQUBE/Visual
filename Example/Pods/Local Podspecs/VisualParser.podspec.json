@@ -1,6 +1,6 @@
 {
   "name": "VisualParser",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "summary": "Sms Parser",
   "description": "Sms Parser For Visual App",
   "homepage": "https://github.com/TENQUBE/VisualParser",
@@ -9,15 +9,15 @@
   },
   "source": {
     "git": "https://github.com/TENQUBE/VisualParser.git",
-    "tag": "0.4.2"
+    "tag": "0.4.3"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
-  "source_files": "VisualParser/Classes/**/*",
+  "source_files": "Sources/VisualParser/Classes/**/*",
   "resource_bundles": {
     "VisualParser": [
-      "VisualParser/Assets/**/*"
+      "Sources/VisualParser/Assets/**/*"
     ]
   },
   "dependencies": {
@@ -31,7 +31,7 @@
 
     ],
     "RealmSwift": [
-      "~> 3.18.0"
+
     ]
   }
 }

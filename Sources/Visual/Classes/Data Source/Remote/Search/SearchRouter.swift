@@ -52,7 +52,7 @@ public enum SearchRouter: URLRequestConvertible {
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        request.allHTTPHeaderFields = headers
+        request.allHTTPHeaderFields = ["Content-Type": "application/json"]
         
         request.addValue(apiKey, forHTTPHeaderField: "x-api-key")
         

@@ -64,7 +64,7 @@ public enum ResourceRouter: URLRequestConvertible {
         var request = URLRequest(url: url.appendingPathComponent(path))
         
         request.httpMethod = method.rawValue
-        request.allHTTPHeaderFields = headers
+        request.allHTTPHeaderFields = ["Content-Type": "application/json", "service": "ibk", "User-Agent" : "IOS"]
         
         request.addValue(apiKey, forHTTPHeaderField: "x-api-key")
         

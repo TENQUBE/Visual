@@ -13,10 +13,10 @@ class AlamofireManager {
         case prod
     }
     
-    private let session: SessionManager
+    private let session: Session
 
     
-    init(session: Alamofire.SessionManager) {
+    init(session: Alamofire.Session) {
         self.session = session
     }
     
